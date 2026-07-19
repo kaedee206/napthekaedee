@@ -1,0 +1,2473 @@
+{
+    "info": {
+        "_postman_id": "26472781-0dca-4db8-b288-fc62902d72c8",
+        "name": "CARD PARTNER API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+        "toc": [],
+        "description": "<html><head></head><body></body></html>",
+        "owner": "5740908",
+        "collectionId": "26472781-0dca-4db8-b288-fc62902d72c8",
+        "publishedId": "TVYJ5Ggr",
+        "public": true,
+        "customColor": {
+            "top-bar": "FFFFFF",
+            "right-sidebar": "303030",
+            "highlight": "EF5B25"
+        },
+        "publishDate": "2020-10-28T08:17:57.000Z"
+    },
+    "item": [
+        {
+            "name": "\u0110\u1ed4I TH\u1eba",
+            "item": [
+                {
+                    "name": "G\u1eedi th\u1ebb l\u00ean h\u1ec7 th\u1ed1ng",
+                    "id": "f916c16a-57a4-4348-91a0-6238bf7d6879",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "type": "text",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "telco",
+                                    "type": "text",
+                                    "value": "MOBIFONE"
+                                },
+                                {
+                                    "key": "code",
+                                    "type": "text",
+                                    "value": "664196324427"
+                                },
+                                {
+                                    "key": "serial",
+                                    "type": "text",
+                                    "value": "089801001443088"
+                                },
+                                {
+                                    "key": "amount",
+                                    "type": "text",
+                                    "value": "50000"
+                                },
+                                {
+                                    "key": "request_id",
+                                    "type": "text",
+                                    "value": "32323333"
+                                },
+                                {
+                                    "key": "partner_id",
+                                    "type": "text",
+                                    "value": "8740404061"
+                                },
+                                {
+                                    "key": "sign",
+                                    "type": "text",
+                                    "value": "9a0ac309d8047b49f49a43bfdb8d0d51"
+                                },
+                                {
+                                    "key": "command",
+                                    "type": "text",
+                                    "value": "charging"
+                                }
+                            ]
+                        },
+                        "url": "http://{{domain_post}}/chargingws/v2",
+                        "description": "<p>B\u1ea1n c\u00f3 th\u1ec3 g\u1eedi b\u1eb1ng ph\u01b0\u01a1ng th\u1ee9c get ho\u1eb7c post t\u00f9y th\u00edch. <br />\n<strong>Ch\u1eef k\u00fd \u0111\u01b0\u1ee3c m\u00e3 h\u00f3a nh\u01b0 sau: md5(partner_key + code + serial)</strong>\n<br />\n<strong>M\u00e3 l\u1ed7i: </strong><br />\n1: Th\u1ebb th\u00e0nh c\u00f4ng \u0111\u00fang m\u1ec7nh gi\u00e1<br />\n2: Th\u1ebb th\u00e0nh c\u00f4ng sai m\u1ec7nh gi\u00e1<br />\n3: Th\u1ebb l\u1ed7i <br />\n4: H\u1ec7 th\u1ed1ng b\u1ea3o tr\u00ec <br />\n99: Th\u1ebb ch\u1edd x\u1eed l\u00fd<br />\n100: G\u1eedi th\u1ebb th\u1ea5t b\u1ea1i - C\u00f3 l\u00fd do \u0111i k\u00e8m \u1edf ph\u1ea7n th\u00f4ng b\u00e1o tr\u1ea3 v\u1ec1\n<br /></p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "chargingws",
+                                "v2"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "b59a9969-27fc-4d02-9e64-3dc4d62f6b61",
+                            "name": "G\u1eedi th\u1ebb l\u00ean h\u1ec7 th\u1ed1ng",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "name": "Content-Type",
+                                        "type": "text",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "telco",
+                                            "type": "text",
+                                            "value": "VIETTEL"
+                                        },
+                                        {
+                                            "key": "code",
+                                            "type": "text",
+                                            "value": "312821445892982"
+                                        },
+                                        {
+                                            "key": "serial",
+                                            "type": "text",
+                                            "value": "10004783347874"
+                                        },
+                                        {
+                                            "key": "amount",
+                                            "type": "text",
+                                            "value": "50000"
+                                        },
+                                        {
+                                            "key": "request_id",
+                                            "type": "text",
+                                            "value": "323233"
+                                        },
+                                        {
+                                            "key": "partner_id",
+                                            "type": "text",
+                                            "value": "3681148751"
+                                        },
+                                        {
+                                            "key": "sign",
+                                            "type": "text",
+                                            "value": "19db4f1670100764069dba47429a9d94"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "type": "text",
+                                            "value": "charging"
+                                        }
+                                    ],
+                                    "options": {
+                                        "raw": {
+                                            "language": "text"
+                                        }
+                                    }
+                                },
+                                "url": "http://{{domain_post}}/chargingws/v2"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 28 Oct 2020 08:03:53 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjRxN0NZbmYyYzYzcjFEam5cL3lIdWhBPT0iLCJ2YWx1ZSI6IlZcL3FaNjhDVkFROFVkc1dqcEdCUmU1anc5bnZBS0lWUG91ZUVVK2xtTFJZVFo4VWtMTVFqUVRpaDZlYXQ3ZHo4IiwibWFjIjoiZTQxNGU2ZTRiMjJlMzMzYmRlN2RlYmIwMDllN2RjYWQwYWFkMmZiNDFkZTk3OTQ3YjdjNmUzZjg4OTg2ZDY3OSJ9; expires=Wed, 28-Oct-2020 10:03:53 GMT; Max-Age=7200; path=/"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "web_session=eyJpdiI6ImswQXluTE1wVkd6WVh5V2E3OTVHUnc9PSIsInZhbHVlIjoidXBzXC9ZYXY0ZVNmbTlTa1ZZZlpncmw0MTlOM0llMUppdEpIM3N2WFBmbGJ0TkZjQUJFK3I0WXljQTlTQ3h0djkiLCJtYWMiOiI4MDJmZWQzYWZiZjY5YjAwNDA4ODhjYzY1MWViMDE4NzA5Y2VhMTU5NGMxOWExNTRlY2YzYjlkZDQ5YWI3ZGNmIn0%3D; expires=Wed, 28-Oct-2020 10:03:53 GMT; Max-Age=7200; path=/; httponly"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "188"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=999"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"trans_id\": 8,\n    \"request_id\": \"323233\",\n    \"amount\": 35000,\n    \"value\": null,\n    \"declared_value\": 50000,\n    \"telco\": \"VIETTEL\",\n    \"serial\": \"10004783347874\",\n    \"code\": \"312821445892982\",\n    \"status\": 99,\n    \"message\": \"PENDING\"\n}"
+                        }
+                    ],
+                    "_postman_id": "f916c16a-57a4-4348-91a0-6238bf7d6879"
+                },
+                {
+                    "name": "Ki\u1ec3m tra tr\u1ea1ng th\u00e1i th\u1ebb",
+                    "id": "bdd52078-2f54-4806-be33-dd535ea6f5d3",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "type": "text",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "telco",
+                                    "type": "text",
+                                    "value": "VIETTEL"
+                                },
+                                {
+                                    "key": "code",
+                                    "type": "text",
+                                    "value": "312821445892982"
+                                },
+                                {
+                                    "key": "serial",
+                                    "type": "text",
+                                    "value": "10004783347874"
+                                },
+                                {
+                                    "key": "amount",
+                                    "type": "text",
+                                    "value": "50000"
+                                },
+                                {
+                                    "key": "request_id",
+                                    "type": "text",
+                                    "value": "323233"
+                                },
+                                {
+                                    "key": "partner_id",
+                                    "type": "text",
+                                    "value": "3681148751"
+                                },
+                                {
+                                    "key": "sign",
+                                    "type": "text",
+                                    "value": "19db4f1670100764069dba47429a9d94"
+                                },
+                                {
+                                    "key": "command",
+                                    "type": "text",
+                                    "value": "check"
+                                }
+                            ]
+                        },
+                        "url": "http://{{domain_post}}/chargingws/v2",
+                        "description": "<p>B\u1ea1n c\u00f3 th\u1ec3 g\u1eedi b\u1eb1ng ph\u01b0\u01a1ng th\u1ee9c get ho\u1eb7c post t\u00f9y th\u00edch. Ch\u1eef k\u00fd \u0111\u01b0\u1ee3c m\u00e3 h\u00f3a nh\u01b0 sau: md5(partner_key + code + serial)</p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "chargingws",
+                                "v2"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "d45638bb-df54-49fc-83f7-416a2a27b058",
+                            "name": "Ki\u1ec3m tra tr\u1ea1ng th\u00e1i th\u1ebb",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "name": "Content-Type",
+                                        "type": "text",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "telco",
+                                            "type": "text",
+                                            "value": "VIETTEL"
+                                        },
+                                        {
+                                            "key": "code",
+                                            "type": "text",
+                                            "value": "312821445892982"
+                                        },
+                                        {
+                                            "key": "serial",
+                                            "type": "text",
+                                            "value": "10004783347874"
+                                        },
+                                        {
+                                            "key": "amount",
+                                            "type": "text",
+                                            "value": "50000"
+                                        },
+                                        {
+                                            "key": "request_id",
+                                            "type": "text",
+                                            "value": "323233"
+                                        },
+                                        {
+                                            "key": "partner_id",
+                                            "type": "text",
+                                            "value": "3681148751"
+                                        },
+                                        {
+                                            "key": "sign",
+                                            "type": "text",
+                                            "value": "19db4f1670100764069dba47429a9d94"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "type": "text",
+                                            "value": "check"
+                                        }
+                                    ],
+                                    "options": {
+                                        "raw": {
+                                            "language": "text"
+                                        }
+                                    }
+                                },
+                                "url": "http://{{domain_post}}/chargingws/v2"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 28 Oct 2020 08:09:23 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6InR4REZiN1JoRWlCQnRtY3NDMHJOVXc9PSIsInZhbHVlIjoiSnQ5dHVucTJTSDIzcUlwanVYdnVxQnkwT2hnMGNFVW5TTzByQ2FhZXB3ZG5cLzZkNGlzNCt4Vm1WS3B0N2UzbEYiLCJtYWMiOiJiMGM4MWFmNWMzYjgwOTc0NThiYjUwYjhhNWNiZWU4NTZmMWVjMmMyOTA5NzhjYTRkMDBkZmI4NmZkYTE3MzRlIn0%3D; expires=Wed, 28-Oct-2020 10:09:23 GMT; Max-Age=7200; path=/"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "web_session=eyJpdiI6IjFleDk1aThpZzA5VVI1Mm5JVlwveXFnPT0iLCJ2YWx1ZSI6InlcL1lrT0ZIRjJYd1VvM1NjYmRKNG8xUGs4MUlnY3o2RGl5TFdrR0c3NWFtUHAweE1leUZ4RnlOSndpKzd4eWVVIiwibWFjIjoiNzM4ZDcxMDIzNDk5N2VhZWM1MDQ0MDNmYzYxZWUwMDQ2Yjk3ZTU2YTQ4MjhlOTQ2OWU3ZjZkYmNmNmEyMDU2OCJ9; expires=Wed, 28-Oct-2020 10:09:23 GMT; Max-Age=7200; path=/; httponly"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "188"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=996"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"trans_id\": 8,\n    \"request_id\": \"323233\",\n    \"status\": 99,\n    \"message\": \"PENDING\",\n    \"telco\": \"VIETTEL\",\n    \"code\": \"312821445892982\",\n    \"serial\": \"10004783347874\",\n    \"declared_value\": 50000,\n    \"value\": null,\n    \"amount\": 35000\n}"
+                        }
+                    ],
+                    "_postman_id": "bdd52078-2f54-4806-be33-dd535ea6f5d3"
+                },
+                {
+                    "name": "G\u1ecdi v\u1ec1 cho b\u1ea1n b\u1eb1ng POST JSON",
+                    "id": "c80724af-c3a3-443b-b0b6-ce689b0c4000",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"status\":1,\"message\":\"Th\\u00e0nh c\\u00f4ng\",\"request_id\":\"989876\",\"declared_value\":50000,\"value\":50000,\"amount\":25000,\"code\":\"314688440422676\",\"serial\":\"10003395125761\",\"telco\":\"VIETTEL\",\"trans_id\":54180,\"callback_sign\":\"17b118fe86852c52ea126c9537617f6d\"}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "http://yourdomain.com/charge/callback",
+                        "description": "<p>B\u1ea1n nh\u1eadn callback k\u1ebft qu\u1ea3 x\u1eed l\u00fd th\u1ebb t\u1eeb ch\u00fang t\u00f4i b\u1eb1ng ph\u01b0\u01a1ng th\u1ee9c POST. Ch\u00fang t\u00f4i g\u1eedi Json cho c\u00e1c b\u1ea1n nh\u00e9. <br />\nCh\u1eef k\u00fd c\u1ee7a callback_sign s\u1ebd l\u00e0: <b>md5(partner_key + code + serial)</b></p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "charge",
+                                "callback"
+                            ],
+                            "host": [
+                                "yourdomain",
+                                "com"
+                            ],
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "d741f2ff-d856-4579-94da-2df7190fef2c",
+                            "name": "callback-post - k\u1ebft qu\u1ea3",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "name": "Content-Type",
+                                        "type": "text",
+                                        "value": "application/json",
+                                        "disabled": true
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"status\":1,\"message\":\"Th\\u00e0nh c\\u00f4ng\",\"request_id\":\"989876\",\"declared_value\":50000,\"value\":50000,\"amount\":25000,\"code\":\"314688440422676\",\"serial\":\"10003395125761\",\"telco\":\"VIETTEL\",\"trans_id\":54180,\"callback_sign\":\"17b118fe86852c52ea126c9537617f6d\"}"
+                                },
+                                "url": "http://yourdomain.com/charge/callback"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": null,
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": 1,\n    \"message\": \"Th\u00e0nh c\u00f4ng\",\n    \"request_id\": \"989876\",\n    \"declared_value\": 50000,\n    \"value\": 50000,\n    \"amount\": 25000,\n    \"code\": \"314688440422676\",\n    \"serial\": \"10003395125761\",\n    \"telco\": \"VIETTEL\",\n    \"trans_id\": 54180,\n    \"callback_sign\": \"17b118fe86852c52ea126c9537617f6d\"\n}"
+                        }
+                    ],
+                    "_postman_id": "c80724af-c3a3-443b-b0b6-ce689b0c4000"
+                },
+                {
+                    "name": "G\u1ecdi v\u1ec1 cho b\u1ea1n b\u1eb1ng GET",
+                    "id": "095a1033-1695-4a01-a7da-a533e5cfe780",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://yourdomain.com/charge/callback?status=1&message=Th\u00e0nh c\u00f4ng&request_id=989876&declared_value=50000&card_value=50000&value=50000&amount=25000&code=314688440422676&serial=10003395125761&telco=VIETTEL&trans_id=343424&callback_sign=17b118fe86852c52ea126c9537617f6d",
+                        "description": "<p>B\u1ea1n nh\u1eadn callback k\u1ebft qu\u1ea3 x\u1eed l\u00fd th\u1ebb t\u1eeb ch\u00fang t\u00f4i b\u1eb1ng ph\u01b0\u01a1ng th\u1ee9c GET</p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "charge",
+                                "callback"
+                            ],
+                            "host": [
+                                "yourdomain",
+                                "com"
+                            ],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "message",
+                                    "value": "Th\u00e0nh c\u00f4ng"
+                                },
+                                {
+                                    "key": "request_id",
+                                    "value": "989876"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>M\u1ec7nh gi\u00e1 khai b\u00e1o</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "declared_value",
+                                    "value": "50000"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>M\u1ec7nh gi\u00e1 th\u1ef1c c\u1ee7a th\u1ebb</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "card_value",
+                                    "value": "50000"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>M\u1ec7nh gi\u00e1 t\u00ednh ti\u1ec1n</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "value",
+                                    "value": "50000"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>S\u1ed1 ti\u1ec1n nh\u1eadn \u0111\u01b0\u1ee3c</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "amount",
+                                    "value": "25000"
+                                },
+                                {
+                                    "key": "code",
+                                    "value": "314688440422676"
+                                },
+                                {
+                                    "key": "serial",
+                                    "value": "10003395125761"
+                                },
+                                {
+                                    "key": "telco",
+                                    "value": "VIETTEL"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>M\u00e3 giao d\u1ecbch b\u00ean ch\u00fang t\u00f4i</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "trans_id",
+                                    "value": "343424"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>Ch\u1eef k\u00fd b\u1ea3o v\u1ec7</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "callback_sign",
+                                    "value": "17b118fe86852c52ea126c9537617f6d"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "620c8e1c-ae13-4d99-86a1-868170c32210",
+                            "name": "callback-get",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://yourdomain.com/charge/callback?status=1&message=Th\u00e0nh c\u00f4ng&request_id=989876&declared_value=50000&value=50000&amount=25000&code=314688440422676&serial=10003395125761&telco=VIETTEL&trans_id=343424&callback_sign=17b118fe86852c52ea126c9537617f6d",
+                                    "protocol": "http",
+                                    "host": [
+                                        "yourdomain",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "charge",
+                                        "callback"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "status",
+                                            "value": "1"
+                                        },
+                                        {
+                                            "key": "message",
+                                            "value": "Th\u00e0nh c\u00f4ng"
+                                        },
+                                        {
+                                            "key": "request_id",
+                                            "value": "989876"
+                                        },
+                                        {
+                                            "key": "declared_value",
+                                            "value": "50000",
+                                            "description": "Gi\u00e1 tr\u1ecb khai b\u00e1o"
+                                        },
+                                        {
+                                            "key": "value",
+                                            "value": "50000",
+                                            "description": "Gi\u00e1 tr\u1ecb th\u1ef1c c\u1ee7a th\u1ebb"
+                                        },
+                                        {
+                                            "key": "amount",
+                                            "value": "25000",
+                                            "description": "S\u1ed1 ti\u1ec1n nh\u1eadn \u0111\u01b0\u1ee3c"
+                                        },
+                                        {
+                                            "key": "code",
+                                            "value": "314688440422676"
+                                        },
+                                        {
+                                            "key": "serial",
+                                            "value": "10003395125761"
+                                        },
+                                        {
+                                            "key": "telco",
+                                            "value": "VIETTEL"
+                                        },
+                                        {
+                                            "key": "trans_id",
+                                            "value": "343424",
+                                            "description": "M\u00e3 giao d\u1ecbch b\u00ean ch\u00fang t\u00f4i"
+                                        },
+                                        {
+                                            "key": "callback_sign",
+                                            "value": "17b118fe86852c52ea126c9537617f6d",
+                                            "description": "Ch\u1eef k\u00fd b\u1ea3o v\u1ec7"
+                                        }
+                                    ]
+                                }
+                            },
+                            "_postman_previewlanguage": null,
+                            "header": null,
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": null
+                        }
+                    ],
+                    "_postman_id": "095a1033-1695-4a01-a7da-a533e5cfe780"
+                },
+                {
+                    "name": "L\u1ea5y gi\u00e1 t\u1ea9y th\u1ebb",
+                    "id": "478447e4-74b6-49a1-9ddd-b56e9dc32947",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://{{domain_post}}/chargingws/v2/getfee?partner_id=0299338261",
+                        "description": "<p>B\u1ea1n nh\u1eadn callback k\u1ebft qu\u1ea3 x\u1eed l\u00fd th\u1ebb t\u1eeb ch\u00fang t\u00f4i b\u1eb1ng ph\u01b0\u01a1ng th\u1ee9c GET</p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "chargingws",
+                                "v2",
+                                "getfee"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "partner_id",
+                                    "value": "0299338261"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "239309ff-11d4-4f6a-a8cf-cb5ce395f945",
+                            "name": "L\u1ea5y gi\u00e1 \u0111\u1ed5i th\u1ebb",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://{{domain_post}}/chargingws/price?partner_id=3681148751",
+                                    "protocol": "http",
+                                    "host": [
+                                        "{{domain_post}}"
+                                    ],
+                                    "path": [
+                                        "chargingws",
+                                        "price"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "3681148751"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 28 Oct 2020 07:38:18 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6InZHMkVFdlVkZ2Y0RTBTSFU3U2tmSVE9PSIsInZhbHVlIjoiXC9OXC9OdlwvQ2lFM3FaQXFZZG50RUczTkZ0OWRcL0R0akU0U2hQWlYzbkhFTWNFWFBNU0gyWEZQd0UxVkk1V1BcL1ZUIiwibWFjIjoiY2M0ZjViNDliNTIzZTVhMTdlNWRmMjc2MjZhMTFlZmQ5MWY5Yzk1NzU4MmVkNzI5OGY0ZDAyMDUzNDJmNmIyMSJ9; expires=Wed, 28-Oct-2020 09:38:18 GMT; Max-Age=7200; path=/"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "web_session=eyJpdiI6IlJjN0IwR2pFMHdtcHVLUjhWMHhBTnc9PSIsInZhbHVlIjoiQ1JxaTRcL0N2MlRzQXR6K05UWGZOVEVHXC9CWFEwUWVTY1FoclwvQ2lJK0QrU3M4c0VLcE1UYlpOODVsUFZXTnFHSCIsIm1hYyI6Ijc3NzQ3NzI5OTdhZWQzMDUzMDc5N2NhOTVjZTE3Yjk4MzQxZGY0MGNlZGUxYmQ5NmVhMjc2Y2U1MjY4ZDgwODYifQ%3D%3D; expires=Wed, 28-Oct-2020 09:38:18 GMT; Max-Age=7200; path=/; httponly"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "291"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=999"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"VIETTEL\": [\n        {\n            \"telco\": \"VIETTEL\",\n            \"value\": 10000,\n            \"fees\": 30,\n            \"penalty\": 20\n        },\n        {\n            \"telco\": \"VIETTEL\",\n            \"value\": 20000,\n            \"fees\": 30,\n            \"penalty\": 20\n        },\n        {\n            \"telco\": \"VIETTEL\",\n            \"value\": 50000,\n            \"fees\": 30,\n            \"penalty\": 20\n        },\n        {\n            \"telco\": \"VIETTEL\",\n            \"value\": 100000,\n            \"fees\": 30,\n            \"penalty\": 20\n        }\n    ],\n    \"VINAPHONE\": [],\n    \"MOBIFONE\": [],\n    \"GATE\": [],\n    \"ZING\": []\n}"
+                        }
+                    ],
+                    "_postman_id": "478447e4-74b6-49a1-9ddd-b56e9dc32947"
+                }
+            ],
+            "id": "2834bc91-7486-4a72-8f8b-8ffafa9c2be9",
+            "description": "<p><strong>Api d\u00e0nh cho \u0111\u1ed1i t\u00e1c b\u00e1n th\u1ebb c\u00e0o cho h\u1ec7 th\u1ed1ng</strong></p>\n",
+            "_postman_id": "2834bc91-7486-4a72-8f8b-8ffafa9c2be9"
+        },
+        {
+            "name": "KI\u1ec2M TRA SERI",
+            "item": [
+                {
+                    "name": "Ki\u1ec3m tra seri",
+                    "id": "eeb0183c-7a7f-4544-844a-848cf04da8ab",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": "http://{{domain_post}}/api/checkcard?telco=VIETTEL&serial=20000203625855&partner_id=44492838431&sign=77453e6def6c29d40fa6e2536f31c552",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "api",
+                                "checkcard"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "telco",
+                                    "value": "VIETTEL"
+                                },
+                                {
+                                    "key": "serial",
+                                    "value": "20000203625855"
+                                },
+                                {
+                                    "key": "partner_id",
+                                    "value": "44492838431"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>md5(partner_key+serial) - gh\u00e9p li\u1ec1n 2 d\u1eef li\u1ec7u</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "sign",
+                                    "value": "77453e6def6c29d40fa6e2536f31c552"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "f7990e52-9184-4844-83b5-af870b565a68",
+                            "name": "Ki\u1ec3m tra seri",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://{{domain_post}}/api/checkcard?telco=VIETTEL&serial=20000203625855&partner_id=44492838431&sign=77453e6def6c29d40fa6e2536f31c552",
+                                    "protocol": "http",
+                                    "host": [
+                                        "{{domain_post}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "checkcard"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "telco",
+                                            "value": "VIETTEL"
+                                        },
+                                        {
+                                            "key": "serial",
+                                            "value": "20000203625855"
+                                        },
+                                        {
+                                            "key": "partner_id",
+                                            "value": "44492838431"
+                                        },
+                                        {
+                                            "key": "sign",
+                                            "value": "77453e6def6c29d40fa6e2536f31c552",
+                                            "description": "md5(partner_key+serial) - gh\u00e9p li\u1ec1n 2 d\u1eef li\u1ec7u"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Fri, 27 Jan 2023 14:56:07 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=100"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"status\": \"checked\",\n        \"serial\": \"20000203625855\",\n        \"card_status\": \"unavailable\",\n        \"value\": 50000,\n        \"date_used\": \"20/11/2022\",\n        \"acc_charged\": \"986\"\n    }\n}"
+                        }
+                    ],
+                    "_postman_id": "eeb0183c-7a7f-4544-844a-848cf04da8ab"
+                }
+            ],
+            "id": "6ecf2bbe-a3ad-47f2-b54b-213f851d723e",
+            "description": "<p><strong>Api d\u00e0nh cho \u0111\u1ed1i t\u00e1c ki\u1ec3m tra seri th\u1ebb c\u00e0o</strong></p>\n",
+            "_postman_id": "6ecf2bbe-a3ad-47f2-b54b-213f851d723e"
+        },
+        {
+            "name": "MUA TH\u1eba",
+            "item": [
+                {
+                    "name": "Mua th\u1ebb c\u00e0o",
+                    "id": "4b57bbf3-d49e-439a-a3f2-cefe40818367",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": "https://tenmien.com/api/cardws?partner_id=0299338261&command=buycard&request_id=113&service_code=Viettel&wallet_number=0081083966&value=10000&qty=2&sign=ourfyhwoeu234ouyh324o23h4",
+                        "description": "<p>S\u1eed d\u1ee5ng ph\u01b0\u01a1ng th\u1ee9c POST \u0111\u1ec3 g\u1eedi d\u1eef li\u1ec7u (JSON, URL_ENCODE, FORM_PARAMS)  </p>\n<p><strong>Ch\u1eef k\u00fd l\u00e0 md5 c\u1ee7a c\u00e1c d\u1eef li\u1ec7u theo l\u1ea7n l\u01b0\u1ee3t sau: partner_key, partner_id, command, request_id. C\u00e1c d\u1eef li\u1ec7u gh\u00e9p li\u1ec1n nhau. \u1ede m\u1ed9t s\u1ed1 h\u00e0m kh\u00f4ng c\u00f3 request_id (nh\u01b0 check available, get balance...) th\u00ec cho gi\u00e1 tr\u1ecb r\u1ed7ng \"\".</strong>  </p>\n<p><strong>L\u01b0u \u00fd: \u0110\u1ec3 \u0111\u01a1n gi\u1ea3n cho vi\u1ec7c k\u1ebft n\u1ed1i v\u00ec th\u1ebf d\u1eef li\u1ec7u th\u1ebb tr\u1ea3 v\u1ec1 kh\u00f4ng \u0111\u01b0\u1ee3c m\u00e3 h\u00f3a. Ch\u00fang t\u00f4i khuy\u00ean b\u1ea1n s\u1eed d\u1ee5ng SSL cho website c\u1ee7a b\u1ea1n \u0111\u1ec3 b\u1ea3o v\u1ec7 th\u1ebb khi truy\u1ec1n qua internet.</strong>  </p>\n<p><strong>Thay tenmien.com th\u00e0nh t\u00ean mi\u1ec1n b\u1ea1n \u0111ang mu\u1ed1n \u0111\u1ea5u n\u1ed1i.</strong>  </p>\n<p><strong>B\u1ea3ng m\u00e3 l\u1ed7i:</strong></p>\n<p>1:Mua the thanh cong</p>\n\n<p>2:Thanh toan thanh cong. Lay the that bai, vui long redownload sau it phut</p>\n\n<p>100:San pham khong ton tai</p>\n\n<p>101:Vi dien tu khong ton tai</p>\n\n<p>102:So du vi khong du</p>\n\n<p>103:Khong co du lieu gui len</p>\n\n<p>104:Du lieu gui len khong dung</p>\n\n<p>105:San pham khong dung</p>\n\n<p>106:Loai the dang ngung cung cap</p>\n\n<p>107:Loi mua hang, ban chua bi tru tien</p>\n\n<p>108:Khong ton tai tai khoan merchant</p>\n\n<p>109:Ma yeu cau request_id da ton tai</p>\n\n<p>110:Yeu cau khong hop le</p>\n\n<p>111:Dia chi vi khong ton tai</p>\n\n<p>112:Dia chi vi khong hoat dong</p>\n\n<p>113:Tai khoan bi khoa</p>\n\n<p>114:Merchant sai IP dang ky</p>\n\n<p>115:Merchant khong hoat dong</p>\n\n<p>116:Sai chu ky</p>\n\n<p>117:Yeu cau khong dung. Thieu tham so command</p>\n\n<p>118:San pham nay da het</p>\n\n<p>119:Dia chi IP khong duoc quyen truy cap</p>\n\n<p>120:Loi Exception</p>\n\n<p>121:Thanh toan that bai</p>\n\n<p>122:Khong mua duoc hang</p>\n\n<p>123:Gia san pham khong dung</p>\n\n<p>124:Don hang that bai vi bi gioi han</p>\n\n<p>125:So luong khong hop le</p>\n\n<p>126:So luong phai la so nguyen duong</p>",
+                        "urlObject": {
+                            "protocol": "https",
+                            "path": [
+                                "api",
+                                "cardws"
+                            ],
+                            "host": [
+                                "tenmien",
+                                "com"
+                            ],
+                            "query": [
+                                {
+                                    "key": "partner_id",
+                                    "value": "0299338261"
+                                },
+                                {
+                                    "key": "command",
+                                    "value": "buycard"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>ID c\u1ee7a b\u1ea1n</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "request_id",
+                                    "value": "113"
+                                },
+                                {
+                                    "key": "service_code",
+                                    "value": "Viettel"
+                                },
+                                {
+                                    "key": "wallet_number",
+                                    "value": "0081083966"
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "10000"
+                                },
+                                {
+                                    "key": "qty",
+                                    "value": "2"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>md5($partner_key . $partner_id. $command . $request_id);</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "sign",
+                                    "value": "ourfyhwoeu234ouyh324o23h4"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "6ee093da-0339-48a0-a560-e57f31971e9e",
+                            "name": "Buy Card - Sai IP",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://tenmien.com/api/cardws?partner_id=0299338261&command=buycard&request_id=113&service_code=Viettel&wallet_number=0021962752&value=10000&qty=2&sign=ourfyhwoeu234ouyh324o23h4",
+                                    "protocol": "http",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "0299338261"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "value": "buycard"
+                                        },
+                                        {
+                                            "key": "request_id",
+                                            "value": "113",
+                                            "description": "ID c\u1ee7a b\u1ea1n\n"
+                                        },
+                                        {
+                                            "key": "service_code",
+                                            "value": "Viettel"
+                                        },
+                                        {
+                                            "key": "wallet_number",
+                                            "value": "0021962752"
+                                        },
+                                        {
+                                            "key": "value",
+                                            "value": "10000"
+                                        },
+                                        {
+                                            "key": "qty",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "key": "sign",
+                                            "value": "ourfyhwoeu234ouyh324o23h4",
+                                            "description": "md5($partner_key . $partner_id. $command . $request_id);"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 27 Oct 2021 16:06:02 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "63"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=100"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": 114,\n    \"message\": \"Merchant sai IP dang ky\",\n    \"data\": false\n}"
+                        },
+                        {
+                            "id": "7e6158bd-6eda-4b61-af84-814ee25cfde4",
+                            "name": "Buy Card -Mua the thanh cong",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://tenmien.com/api/cardws?partner_id=0299338261&command=buycard&request_id=113&service_code=Viettel&wallet_number=0081083966&value=10000&qty=2&sign=ourfyhwoeu234ouyh324o23h4",
+                                    "protocol": "https",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "0299338261"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "value": "buycard"
+                                        },
+                                        {
+                                            "key": "request_id",
+                                            "value": "113",
+                                            "description": "ID c\u1ee7a b\u1ea1n\n"
+                                        },
+                                        {
+                                            "key": "service_code",
+                                            "value": "Viettel"
+                                        },
+                                        {
+                                            "key": "wallet_number",
+                                            "value": "0081083966"
+                                        },
+                                        {
+                                            "key": "value",
+                                            "value": "10000"
+                                        },
+                                        {
+                                            "key": "qty",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "key": "sign",
+                                            "value": "ourfyhwoeu234ouyh324o23h4",
+                                            "description": "md5($partner_key . $partner_id. $command . $request_id);"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 27 Oct 2021 16:12:03 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "336"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=99"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": 1,\n    \"message\": \"Mua the thanh cong\",\n    \"data\": {\n        \"cards\": [\n            {\n                \"name\": \"Viettel 10.000\u0111\",\n                \"serial\": \"20000098121305\",\n                \"code\": \"529844012436956\",\n                \"expired\": null\n            },\n            {\n                \"name\": \"Viettel 10.000\u0111\",\n                \"serial\": \"20000097833260\",\n                \"code\": \"129970448259291\",\n                \"expired\": null\n            }\n        ],\n        \"time\": \"2021-10-27 23:12:16\",\n        \"request_id\": \"113\",\n        \"order_code\": \"S61797A53BCEEF\"\n    }\n}"
+                        },
+                        {
+                            "id": "833b95ba-9d1e-4ade-a85a-493d54194288",
+                            "name": "Buy Card - Sai ch\u1eef k\u00fd",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://tenmien.com/api/cardws?partner_id=0299338261&command=buycard&request_id=113&service_code=Viettel&wallet_number=0021962752&value=10000&qty=2&sign=ourfyhwoeu234ouyh324o23h4",
+                                    "protocol": "https",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "0299338261"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "value": "buycard"
+                                        },
+                                        {
+                                            "key": "request_id",
+                                            "value": "113",
+                                            "description": "ID c\u1ee7a b\u1ea1n\n"
+                                        },
+                                        {
+                                            "key": "service_code",
+                                            "value": "Viettel"
+                                        },
+                                        {
+                                            "key": "wallet_number",
+                                            "value": "0021962752"
+                                        },
+                                        {
+                                            "key": "value",
+                                            "value": "10000"
+                                        },
+                                        {
+                                            "key": "qty",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "key": "sign",
+                                            "value": "ourfyhwoeu234ouyh324o23h4",
+                                            "description": "md5($partner_key . $partner_id. $command . $request_id);"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 27 Oct 2021 16:00:34 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=100"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": 116,\n    \"message\": \"Sai chu ky\",\n    \"data\": false\n}"
+                        }
+                    ],
+                    "_postman_id": "4b57bbf3-d49e-439a-a3f2-cefe40818367"
+                },
+                {
+                    "name": "Ki\u1ec3m tra t\u1ed3n kho",
+                    "id": "deb0e712-ee9f-484a-a1fe-755c846f7445",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": "https://tenmien.com/api/cardws?partner_id=0299338261&command=checkavailable&service_code=Viettel&value=10000&qty=2",
+                        "urlObject": {
+                            "protocol": "https",
+                            "path": [
+                                "api",
+                                "cardws"
+                            ],
+                            "host": [
+                                "tenmien",
+                                "com"
+                            ],
+                            "query": [
+                                {
+                                    "key": "partner_id",
+                                    "value": "0299338261"
+                                },
+                                {
+                                    "key": "command",
+                                    "value": "checkavailable"
+                                },
+                                {
+                                    "key": "service_code",
+                                    "value": "Viettel"
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "10000"
+                                },
+                                {
+                                    "key": "qty",
+                                    "value": "2"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "3476b38e-9594-449b-950a-9e5375e62a1c",
+                            "name": "Check Card Availability - H\u1ebft h\u00e0ng",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://tenmien.com/api/cardws?partner_id=0299338261&command=checkavailable&service_code=Viettel&value=10000&qty=2",
+                                    "protocol": "https",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "0299338261"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "value": "checkavailable"
+                                        },
+                                        {
+                                            "key": "service_code",
+                                            "value": "Viettel"
+                                        },
+                                        {
+                                            "key": "value",
+                                            "value": "10000"
+                                        },
+                                        {
+                                            "key": "qty",
+                                            "value": "2"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 27 Oct 2021 16:27:06 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=100"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"stock_available\": false,\n    \"message\": \"H\u1ebft h\u00e0ng\"\n}"
+                        },
+                        {
+                            "id": "a4e276ea-2012-429e-97db-c81506f06f49",
+                            "name": "Check Card Availability",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://tenmien.com/api/cardws?partner_id=0299338261&command=checkavailable&service_code=Viettel&value=10000&qty=2",
+                                    "protocol": "https",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "0299338261"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "value": "checkavailable"
+                                        },
+                                        {
+                                            "key": "service_code",
+                                            "value": "Viettel"
+                                        },
+                                        {
+                                            "key": "value",
+                                            "value": "10000"
+                                        },
+                                        {
+                                            "key": "qty",
+                                            "value": "2"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 27 Oct 2021 16:24:51 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=100"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"stock_available\": true,\n    \"message\": \"C\u00f2n h\u00e0ng\"\n}"
+                        }
+                    ],
+                    "_postman_id": "deb0e712-ee9f-484a-a1fe-755c846f7445"
+                },
+                {
+                    "name": "T\u1ea3i l\u1ea1i th\u1ebb",
+                    "id": "b3bb3b39-d340-4f6d-a1e4-ebd1650ea4fe",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": "https://tenmien.com/api/cardws?partner_id=0299338261&command=redownload&request_id=113&order_code=S61797A53BCEEF&sign=idsgh2i34gdlsfdskfgdfjkfd",
+                        "description": "<p>H\u00e0m n\u00e0y s\u1ebd t\u1ea3i l\u1ea1i th\u1ebb theo m\u00e3 \u0111\u01a1n h\u00e0ng, kh\u00f4ng ph\u00e1t sinh giao d\u1ecbch m\u1edbi. <br /></p>\n",
+                        "urlObject": {
+                            "protocol": "https",
+                            "path": [
+                                "api",
+                                "cardws"
+                            ],
+                            "host": [
+                                "tenmien",
+                                "com"
+                            ],
+                            "query": [
+                                {
+                                    "key": "partner_id",
+                                    "value": "0299338261"
+                                },
+                                {
+                                    "key": "command",
+                                    "value": "redownload"
+                                },
+                                {
+                                    "key": "request_id",
+                                    "value": "113"
+                                },
+                                {
+                                    "key": "order_code",
+                                    "value": "S61797A53BCEEF"
+                                },
+                                {
+                                    "description": {
+                                        "content": "<p>md5($partner_key . $partner_id. $command . $request_id);</p>\n",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "sign",
+                                    "value": "idsgh2i34gdlsfdskfgdfjkfd"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "43b903ac-d652-47d6-8ea6-30fff07c3b43",
+                            "name": "Redownload Card",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://tenmien.com/api/cardws?partner_id=0299338261&command=redownload&request_id=113&order_code=S61797A53BCEEF&sign=idsgh2i34gdlsfdskfgdfjkfd",
+                                    "protocol": "https",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "0299338261"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "value": "redownload"
+                                        },
+                                        {
+                                            "key": "request_id",
+                                            "value": "113"
+                                        },
+                                        {
+                                            "key": "order_code",
+                                            "value": "S61797A53BCEEF"
+                                        },
+                                        {
+                                            "key": "sign",
+                                            "value": "idsgh2i34gdlsfdskfgdfjkfd",
+                                            "description": "md5($partner_key . $partner_id. $command . $request_id);"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 27 Oct 2021 16:32:44 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "336"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=100"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": 1,\n    \"message\": \"Mua the thanh cong\",\n    \"data\": {\n        \"cards\": [\n            {\n                \"name\": \"Viettel 10.000\u0111\",\n                \"serial\": \"20000098121305\",\n                \"code\": \"529844012436956\",\n                \"expired\": null\n            },\n            {\n                \"name\": \"Viettel 10.000\u0111\",\n                \"serial\": \"20000097833260\",\n                \"code\": \"129970448259291\",\n                \"expired\": null\n            }\n        ],\n        \"time\": \"2021-10-27 23:32:44\",\n        \"request_id\": \"113\",\n        \"order_code\": \"S61797A53BCEEF\"\n    }\n}"
+                        }
+                    ],
+                    "_postman_id": "b3bb3b39-d340-4f6d-a1e4-ebd1650ea4fe"
+                },
+                {
+                    "name": "L\u1ea5y s\u1ed1 d\u01b0",
+                    "id": "3fbc9518-e8c1-42a5-aa5b-41f5030fa4a6",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": "https://tenmien.com/api/cardws?partner_id=0299338261&wallet_number=0081083966&command=getbalance&sign=2342364dghr234fhfdsdsfsdfd",
+                        "description": "<p><strong>Ch\u1eef k\u00fd nh\u01b0 sau</strong></p>\n<p>StartFragment</p>\n<p>md5($partner_key . $partner_id. $command . $request_id);</p>\n<p>EndFragm</p>\n",
+                        "urlObject": {
+                            "protocol": "https",
+                            "path": [
+                                "api",
+                                "cardws"
+                            ],
+                            "host": [
+                                "tenmien",
+                                "com"
+                            ],
+                            "query": [
+                                {
+                                    "key": "partner_id",
+                                    "value": "0299338261"
+                                },
+                                {
+                                    "key": "wallet_number",
+                                    "value": "0081083966"
+                                },
+                                {
+                                    "key": "command",
+                                    "value": "getbalance"
+                                },
+                                {
+                                    "key": "sign",
+                                    "value": "2342364dghr234fhfdsdsfsdfd"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "1f228ce9-7477-4429-b892-cf9a1704a225",
+                            "name": "Get Balance",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://tenmien.com/api/cardws?partner_id=0299338261&wallet_number=0081083966&command=getbalance",
+                                    "protocol": "https",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "0299338261"
+                                        },
+                                        {
+                                            "key": "wallet_number",
+                                            "value": "0081083966"
+                                        },
+                                        {
+                                            "key": "command",
+                                            "value": "getbalance"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Wed, 27 Oct 2021 16:18:13 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "40"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=10, max=100"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"balance\": 554900,\n    \"currency_code\": \"VND\"\n}"
+                        }
+                    ],
+                    "_postman_id": "3fbc9518-e8c1-42a5-aa5b-41f5030fa4a6"
+                },
+                {
+                    "name": "L\u1ea5y danh s\u00e1ch th\u1ebb",
+                    "id": "6239b9b8-b6f8-4ef6-9e5e-736c68eddb24",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "https://tenmien.com/api/cardws/products?partner_id=6322520361",
+                        "urlObject": {
+                            "protocol": "https",
+                            "path": [
+                                "api",
+                                "cardws",
+                                "products"
+                            ],
+                            "host": [
+                                "tenmien",
+                                "com"
+                            ],
+                            "query": [
+                                {
+                                    "key": "partner_id",
+                                    "value": "6322520361"
+                                }
+                            ],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "00b4652b-a6ce-42f0-b1fc-2bacb6bd21f5",
+                            "name": "Get Products",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://tenmien.com/api/cardws/products?partner_id=6322520361",
+                                    "protocol": "https",
+                                    "host": [
+                                        "tenmien",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "cardws",
+                                        "products"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "partner_id",
+                                            "value": "6322520361"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Server",
+                                    "value": "nginx"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Tue, 05 Oct 2021 08:45:33 GMT"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "1770"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "private, must-revalidate"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "expires",
+                                    "value": "-1"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Accept-Encoding"
+                                },
+                                {
+                                    "key": "Content-Encoding",
+                                    "value": "gzip"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"name\": \"Th\u1ebb Viettel\",\n        \"slug\": \"the-viettel\",\n        \"service_code\": \"Viettel\",\n        \"image\": \"/storage/userfiles/images/thecao/the-viettel.png\",\n        \"short_description\": \"the viettel\",\n        \"description\": \"\\n<p>H\u01b0\u1edbng d\u1eabn c\u00e1ch n\u1ea1p th\u1ebb Viettel tr\u1ea3 tr\u01b0\u1edbc b\u1eb1ng th\u1ebb c\u00e0o\\n    <br />\\r\\nB\u01b0\u1edbc 1: B\u1ea1n c\u00f3 th\u1ec3 t\u1edbi c\u00e1c c\u1eeda h\u00e0ng \u0111\u1ea1i l\u00ed c\u00f3 cung c\u1ea5p th\u1ebb c\u00e0o viettel, sau \u0111\u00f3 mua th\u1ebb \u0111i\u1ec7n tho\u1ea1i gi\u1ea5y g\u1ed3m c\u00f3 s\u1ed1 seri, m\u00e3 th\u1ebb, v\u00e0 l\u1edbp tr\u00e1ng b\u1ea1c. Ho\u1eb7c n\u1ebfu mu\u1ed1n nhanh ch\u00f3ng h\u01a1n b\u1ea1n c\u0169ng c\u00f3 th\u1ec3 n\u1ea1p th\u1ebb viettel tr\u1ea3 tr\u01b0\u1edbc t\u1ea1i c\u00e1c website cung c\u1ea5p d\u1ecbch v\u1ee5 ho\u1eb7c mua th\u1ebb b\u1eb1ng tin nh\u1eafn SMS.\\n    <br />\\r\\nB\u01b0\u1edbc 2: C\u1ea1o l\u1edbp b\u1ea1c \u0111\u1ec3 l\u1ea5y d\u00e3y s\u1ed1 sau \u0111\u00f3 nh\u1ea5n m\u00e3: *100*M\u00e3 s\u1ed1 th\u1ebb c\u00e0o# v\u00e0 b\u1ea5m ph\u00edm G\u1ecdi\\n    <br />\\r\\nNh\u00e0 m\u1ea1ng viettel c\u00f2n cung c\u1ea5p d\u1ecbch v\u1ee5 n\u1ea1p ti\u1ec1n cho thu\u00ea bao tr\u1ea3 tr\u01b0\u1edbc kh\u00e1c b\u1eb1ng th\u1ebb c\u00e0o gi\u1ea5y, \u0111\u1ec3 n\u1ea1p ti\u1ec1n viettel b\u1ea1n c\u1ea7n nh\u1ea5n *103*S\u1ed1 \u0111i\u1ec7n tho\u1ea1i nh\u1eadn*M\u00e3 s\u1ed1 th\u1ebb c\u00e0o# &nbsp;v\u00e0 b\u1ea5m ph\u00edm G\u1ecdi, ph\u00ed n\u1ea1p cho thu\u00ea bao kh\u00e1c l\u00e0 1000\u0111/ l\u1ea7n &nbsp;s\u1ebd b\u1ecb tr\u1eeb v\u00e0o t\u00e0i kho\u1ea3n g\u1ed1c c\u1ee7a thu\u00ea bap n\u1ea1p h\u1ed9.</p>\",\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-viettel.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 10000,\n                \"id\": 32\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 20000,\n                \"id\": 33\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 30000,\n                \"id\": 34\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 50000,\n                \"id\": 35\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 100000,\n                \"id\": 36\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 200000,\n                \"id\": 37\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 300000,\n                \"id\": 38\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 500000,\n                \"id\": 39\n            },\n            {\n                \"service_code\": \"Viettel\",\n                \"value\": 1000000,\n                \"id\": 40\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Vinaphone\",\n        \"slug\": \"the-vinaphone\",\n        \"service_code\": \"Vina\",\n        \"image\": \"/storage/userfiles/images/thecao/the-vinaphone.jpeg\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-vinaphone.jpeg\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 10000,\n                \"id\": 19\n            },\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 20000,\n                \"id\": 20\n            },\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 30000,\n                \"id\": 26\n            },\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 50000,\n                \"id\": 27\n            },\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 100000,\n                \"id\": 28\n            },\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 200000,\n                \"id\": 29\n            },\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 300000,\n                \"id\": 30\n            },\n            {\n                \"service_code\": \"Vina\",\n                \"value\": 500000,\n                \"id\": 31\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Mobifone\",\n        \"slug\": \"the-mobifone\",\n        \"service_code\": \"Mobi\",\n        \"image\": \"/storage/userfiles/images/thecao/the-mobifone.jpeg\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-mobifone.jpeg\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 10000,\n                \"id\": 41\n            },\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 20000,\n                \"id\": 42\n            },\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 30000,\n                \"id\": 43\n            },\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 50000,\n                \"id\": 44\n            },\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 100000,\n                \"id\": 45\n            },\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 200000,\n                \"id\": 46\n            },\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 300000,\n                \"id\": 47\n            },\n            {\n                \"service_code\": \"Mobi\",\n                \"value\": 500000,\n                \"id\": 48\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Vietnamobile\",\n        \"slug\": \"the-vietnamobile\",\n        \"service_code\": \"Vnmobile\",\n        \"image\": \"/storage/userfiles/images/thecao/the-vietnamobile.jpeg\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-vietnamobile.jpeg\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Vnmobile\",\n                \"value\": 10000,\n                \"id\": 49\n            },\n            {\n                \"service_code\": \"Vnmobile\",\n                \"value\": 20000,\n                \"id\": 50\n            },\n            {\n                \"service_code\": \"Vnmobile\",\n                \"value\": 50000,\n                \"id\": 52\n            },\n            {\n                \"service_code\": \"Vnmobile\",\n                \"value\": 100000,\n                \"id\": 53\n            },\n            {\n                \"service_code\": \"Vnmobile\",\n                \"value\": 200000,\n                \"id\": 54\n            },\n            {\n                \"service_code\": \"Vnmobile\",\n                \"value\": 300000,\n                \"id\": 55\n            },\n            {\n                \"service_code\": \"Vnmobile\",\n                \"value\": 500000,\n                \"id\": 56\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Garena\",\n        \"slug\": \"the-garena\",\n        \"service_code\": \"Garena\",\n        \"image\": \"/storage/userfiles/images/thecao/the-garena.png\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-garena.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Garena\",\n                \"value\": 20000,\n                \"id\": 66\n            },\n            {\n                \"service_code\": \"Garena\",\n                \"value\": 50000,\n                \"id\": 68\n            },\n            {\n                \"service_code\": \"Garena\",\n                \"value\": 100000,\n                \"id\": 69\n            },\n            {\n                \"service_code\": \"Garena\",\n                \"value\": 200000,\n                \"id\": 70\n            },\n            {\n                \"service_code\": \"Garena\",\n                \"value\": 500000,\n                \"id\": 72\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Appota\",\n        \"slug\": \"the-appota\",\n        \"service_code\": \"Appota\",\n        \"image\": \"/storage/userfiles/images/thecao/the-appota.png\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-appota.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 50000,\n                \"id\": 76\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 100000,\n                \"id\": 77\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 200000,\n                \"id\": 78\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 300000,\n                \"id\": 79\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 500000,\n                \"id\": 80\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 1000000,\n                \"id\": 81\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 2000000,\n                \"id\": 82\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 3000000,\n                \"id\": 83\n            },\n            {\n                \"service_code\": \"Appota\",\n                \"value\": 5000000,\n                \"id\": 84\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Zing\",\n        \"slug\": \"the-zing\",\n        \"service_code\": \"Zing\",\n        \"image\": \"/storage/userfiles/images/thecao/the-zing.png\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-zing.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Zing\",\n                \"value\": 10000,\n                \"id\": 125\n            },\n            {\n                \"service_code\": \"Zing\",\n                \"value\": 20000,\n                \"id\": 126\n            },\n            {\n                \"service_code\": \"Zing\",\n                \"value\": 50000,\n                \"id\": 128\n            },\n            {\n                \"service_code\": \"Zing\",\n                \"value\": 100000,\n                \"id\": 129\n            },\n            {\n                \"service_code\": \"Zing\",\n                \"value\": 200000,\n                \"id\": 130\n            },\n            {\n                \"service_code\": \"Zing\",\n                \"value\": 500000,\n                \"id\": 132\n            },\n            {\n                \"service_code\": \"Zing\",\n                \"value\": 1000000,\n                \"id\": 133\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Vcoin\",\n        \"slug\": \"the-vcoin\",\n        \"service_code\": \"Vcoin\",\n        \"image\": \"/storage/userfiles/images/thecao/the-vcoin.png\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-vcoin.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 10000,\n                \"id\": 85\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 20000,\n                \"id\": 86\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 30000,\n                \"id\": 87\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 50000,\n                \"id\": 88\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 100000,\n                \"id\": 89\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 200000,\n                \"id\": 90\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 300000,\n                \"id\": 91\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 500000,\n                \"id\": 92\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 1000000,\n                \"id\": 93\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 2000000,\n                \"id\": 94\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 3000000,\n                \"id\": 95\n            },\n            {\n                \"service_code\": \"Vcoin\",\n                \"value\": 5000000,\n                \"id\": 96\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Gate\",\n        \"slug\": \"the-gate\",\n        \"service_code\": \"Gate\",\n        \"image\": \"/storage/userfiles/images/thecao/the-gate.png\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-gate.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Gate\",\n                \"value\": 10000,\n                \"id\": 97\n            },\n            {\n                \"service_code\": \"Gate\",\n                \"value\": 20000,\n                \"id\": 98\n            },\n            {\n                \"service_code\": \"Gate\",\n                \"value\": 50000,\n                \"id\": 100\n            },\n            {\n                \"service_code\": \"Gate\",\n                \"value\": 100000,\n                \"id\": 101\n            },\n            {\n                \"service_code\": \"Gate\",\n                \"value\": 200000,\n                \"id\": 102\n            },\n            {\n                \"service_code\": \"Gate\",\n                \"value\": 500000,\n                \"id\": 104\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Giftcode (Carot)\",\n        \"slug\": \"the-giftcode-carot\",\n        \"service_code\": \"Carot\",\n        \"image\": \"/storage/userfiles/images/thecao/the-ca-rot.jpg\",\n        \"short_description\": \"Th\u1ebb carot\",\n        \"description\": \"\\n    <p>Th\u1ebb carot</p>\",\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-ca-rot.jpg\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Carot\",\n                \"value\": 50000,\n                \"id\": 198\n            },\n            {\n                \"service_code\": \"Carot\",\n                \"value\": 100000,\n                \"id\": 199\n            },\n            {\n                \"service_code\": \"Carot\",\n                \"value\": 200000,\n                \"id\": 200\n            },\n            {\n                \"service_code\": \"Carot\",\n                \"value\": 500000,\n                \"id\": 201\n            },\n            {\n                \"service_code\": \"Carot\",\n                \"value\": 1000000,\n                \"id\": 202\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Funcard\",\n        \"slug\": \"the-funcard\",\n        \"service_code\": \"Funcard\",\n        \"image\": \"/storage/userfiles/images/thecao/the-funcard.jpg\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/thecao/the-funcard.jpg\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Funcard\",\n                \"value\": 10000,\n                \"id\": 134\n            },\n            {\n                \"service_code\": \"Funcard\",\n                \"value\": 20000,\n                \"id\": 135\n            },\n            {\n                \"service_code\": \"Funcard\",\n                \"value\": 50000,\n                \"id\": 137\n            },\n            {\n                \"service_code\": \"Funcard\",\n                \"value\": 100000,\n                \"id\": 138\n            },\n            {\n                \"service_code\": \"Funcard\",\n                \"value\": 200000,\n                \"id\": 139\n            },\n            {\n                \"service_code\": \"Funcard\",\n                \"value\": 500000,\n                \"id\": 140\n            },\n            {\n                \"service_code\": \"Funcard\",\n                \"value\": 1000000,\n                \"id\": 141\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Scoin\",\n        \"slug\": \"the-scoin\",\n        \"service_code\": \"scoin\",\n        \"image\": \"/storage/userfiles/images/scoin-de0433047b.png\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/scoin-de0433047b.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 10000,\n                \"id\": 161\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 20000,\n                \"id\": 162\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 50000,\n                \"id\": 164\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 100000,\n                \"id\": 165\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 200000,\n                \"id\": 166\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 500000,\n                \"id\": 168\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 1000000,\n                \"id\": 169\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 2000000,\n                \"id\": 170\n            },\n            {\n                \"service_code\": \"scoin\",\n                \"value\": 5000000,\n                \"id\": 171\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb Gosu\",\n        \"slug\": \"the-gosu\",\n        \"service_code\": \"Gosu\",\n        \"image\": \"/storage/userfiles/images/gosu-fe41ca82e5.png\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/gosu-fe41ca82e5.png\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Gosu\",\n                \"value\": 10000,\n                \"id\": 172\n            },\n            {\n                \"service_code\": \"Gosu\",\n                \"value\": 20000,\n                \"id\": 173\n            },\n            {\n                \"service_code\": \"Gosu\",\n                \"value\": 50000,\n                \"id\": 174\n            },\n            {\n                \"service_code\": \"Gosu\",\n                \"value\": 100000,\n                \"id\": 175\n            },\n            {\n                \"service_code\": \"Gosu\",\n                \"value\": 200000,\n                \"id\": 176\n            },\n            {\n                \"service_code\": \"Gosu\",\n                \"value\": 500000,\n                \"id\": 177\n            },\n            {\n                \"service_code\": \"Gosu\",\n                \"value\": 1000000,\n                \"id\": 178\n            }\n        ]\n    },\n    {\n        \"name\": \"Th\u1ebb SohaCoin\",\n        \"slug\": \"the-sohacoin\",\n        \"service_code\": \"Soha\",\n        \"image\": \"/storage/userfiles/images/soha(1).jpg\",\n        \"short_description\": null,\n        \"description\": null,\n        \"imgurl\": \"https://tenmien.com/storage/userfiles/images/soha(1).jpg\",\n        \"cardvalue\": [\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 10000,\n                \"id\": 188\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 20000,\n                \"id\": 189\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 50000,\n                \"id\": 190\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 100000,\n                \"id\": 191\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 200000,\n                \"id\": 192\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 500000,\n                \"id\": 193\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 1000000,\n                \"id\": 194\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 2000000,\n                \"id\": 195\n            },\n            {\n                \"service_code\": \"Soha\",\n                \"value\": 5000000,\n                \"id\": 196\n            }\n        ]\n    }\n]"
+                        }
+                    ],
+                    "_postman_id": "6239b9b8-b6f8-4ef6-9e5e-736c68eddb24"
+                }
+            ],
+            "id": "ea528e3a-793b-48c6-b55c-0ddc8b3ed5f1",
+            "description": "<p><strong>API d\u00e0nh cho \u0111\u1ed1i t\u00e1c mua th\u1ebb c\u00e0o t\u1eeb h\u1ec7 th\u1ed1ng</strong></p>\n",
+            "_postman_id": "ea528e3a-793b-48c6-b55c-0ddc8b3ed5f1"
+        },
+        {
+            "name": "N\u1ea0P TOPUP",
+            "item": [
+                {
+                    "name": "T\u1ea1o l\u1ec7nh n\u1ea1p",
+                    "id": "05985e29-6bc8-4af4-9b1b-d8fe81093774",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"topup\", \r\n    \"request_id\": \"116\", \r\n    \"service_code\":\"vinatt\", \r\n    \"amount\": \"10000\", \r\n    \"qty\": \"1\",\r\n    \"account_info\": \r\n    {\r\n        \"phone\":\"0943793984\"\r\n    },\r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "http://{{domain_post}}/api/rechargews",
+                        "description": "<p><strong>Th\u1ee9 t\u1ef1 m\u00e3 h\u00f3a ch\u1eef k\u00fd: md5(partner_key + partner_id +  command + request_id)</strong>\n<br />\nS\u1eed d\u1ee5ng ph\u01b0\u01a1ng th\u1ee9c POST JSON \u0111\u1ec3 g\u1eedi d\u1eef li\u1ec7u\n<br />\nprivateKey do ch\u00fang t\u00f4i cung c\u1ea5p khi t\u1ea1o t\u00e0i kho\u1ea3n API.\n<br />\n<strong>Author: Neo Nguyen</strong><br />\nN\u1ebfu c\u00e1c b\u1ea1n g\u1eb7p kh\u00f3 kh\u0103n trong t\u00edch h\u1ee3p, vui l\u00f2ng li\u00ean h\u1ec7 skype: wmt24h</p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "api",
+                                "rechargews"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "058e568e-ec8b-4fa5-8194-c79b9929420e",
+                            "name": "N\u1ea1p ti\u1ec1n \u0111i\u1ec7n tho\u1ea1i",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"topup\", \r\n    \"request_id\": \"116\", \r\n    \"service_code\":\"vinatt\", \r\n    \"amount\": \"10000\", \r\n    \"qty\": \"1\",\r\n    \"account_info\": \r\n    {\r\n        \"phone\":\"0943793984\"\r\n    },\r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": "http://{{domain_post}}/api/rechargews"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Fri, 15 Apr 2022 08:50:20 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "6000"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "5998"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "197"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=999"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"time\": \"2022-04-15 15:50:20\",\n        \"request_id\": \"116\",\n        \"order_code\": \"R625931CC50F71\",\n        \"pay_amount\": 10000,\n        \"discount\": 0,\n        \"service_code\": \"vinatt\",\n        \"amount\": 10000,\n        \"status\": \"pending\"\n    }\n}"
+                        },
+                        {
+                            "id": "29426236-c324-4f1d-8057-117876cfd8d5",
+                            "name": "N\u1ea1p game ng\u1ecdc r\u1ed3ng",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"topup\", \r\n    \"request_id\": \"117\", \r\n    \"service_code\":\"nr\", \r\n    \"amount\": \"50000\", \r\n    \"qty\": \"1\",\r\n    \"account_info\": \r\n    {\r\n        \"server\":\"7\",\r\n        \"username\":\"0964954255\"\r\n    },\r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": "http://{{domain_post}}/api/rechargews"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Fri, 15 Apr 2022 08:50:20 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "6000"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "5998"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "197"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=999"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"time\": \"2022-04-15 15:55:20\",\n        \"request_id\": \"117\",\n        \"order_code\": \"R625931CC50F72\",\n        \"pay_amount\": 46000,\n        \"discount\": 0,\n        \"service_code\": \"nr\",\n        \"amount\": 50000,\n        \"status\": \"pending\"\n    }\n}"
+                        }
+                    ],
+                    "_postman_id": "05985e29-6bc8-4af4-9b1b-d8fe81093774"
+                },
+                {
+                    "name": "L\u1ea5y tr\u1ea1ng th\u00e1i",
+                    "id": "121e540c-1d5a-42e3-8753-bc9b008cde9c",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"getstatus\", \r\n    \"request_id\": \"116\",\r\n    \"order_code\": \"R625931CC50F71\",\r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "http://{{domain_post}}/api/rechargews",
+                        "description": "<p>H\u00e0m n\u00e0y s\u1ebd t\u1ea3i l\u1ea1i th\u1ebb theo m\u00e3 \u0111\u01a1n h\u00e0ng, kh\u00f4ng ph\u00e1t sinh giao d\u1ecbch m\u1edbi. <br />\n<strong>Th\u1ee9 t\u1ef1 m\u00e3 h\u00f3a ch\u1eef k\u00fd: md5(partner_key + partner_id +  command + request_id) </strong></p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "api",
+                                "rechargews"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "f7cb06b3-5afc-48d2-857b-4a215cf515e1",
+                            "name": "Get Status",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"getstatus\", \r\n    \"request_id\": \"116\",\r\n    \"order_code\": \"R625931CC50F71\",\r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": "http://{{domain_post}}/api/rechargews"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Fri, 15 Apr 2022 09:20:30 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "6000"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "5997"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "167"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=998"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"account\": {\n            \"phone\": \"0943793984\"\n        },\n        \"request_value\": 10000,\n        \"amount\": 10000,\n        \"request_id\": \"116\",\n        \"order_code\": \"R625931CC50F71\",\n        \"status\": \"pending\"\n    }\n}"
+                        }
+                    ],
+                    "_postman_id": "121e540c-1d5a-42e3-8753-bc9b008cde9c"
+                },
+                {
+                    "name": "L\u1ea5y danh s\u00e1ch s\u1ea3n ph\u1ea9m",
+                    "id": "369f1cb9-e48c-41de-b8d0-1dbcb8250929",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"partner_id\": \"45974491332\", \r\n    \"command\":\"productlist\", \r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "http://{{domain_post}}/api/rechargews",
+                        "description": "<p>H\u00e0m n\u00e0y s\u1ebd t\u1ea3i t\u1ea5t c\u1ea3 th\u00f4ng tin v\u1ec1 s\u1ea3n ph\u1ea9m m\u00e0 ch\u00fang t\u00f4i \u0111ang b\u00e1n. <br />\n<strong>Th\u1ee9 t\u1ef1 m\u00e3 h\u00f3a ch\u1eef k\u00fd: md5(partner_key + partner_id +  command) </strong></p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "api",
+                                "rechargews"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "b6dea0d8-4807-44b7-a92a-12601d4571ed",
+                            "name": "Get Product Info",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"productlist\", \r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": "http://{{domain_post}}/api/rechargews"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Fri, 15 Apr 2022 09:39:32 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "6000"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "5998"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=999"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"name\": \"N\u1ea1p Viettel tr\u1ea3 sau\",\n            \"service_code\": \"viettelts\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/thecao/the-viettel.png\",\n            \"items\": [\n                {\n                    \"name\": \"10,000 \u0111\",\n                    \"value\": 10000,\n                    \"price\": \"10000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"20,000 \u0111\",\n                    \"value\": 20000,\n                    \"price\": \"20000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"30,000 \u0111\",\n                    \"value\": 30000,\n                    \"price\": \"30000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"300,000 \u0111\",\n                    \"value\": 300000,\n                    \"price\": \"300000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                }\n            ]\n        },\n        {\n            \"name\": \"N\u1ea1p Viettel tr\u1ea3 tr\u01b0\u1edbc\",\n            \"service_code\": \"vietteltt\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/thecao/the-viettel.png\",\n            \"items\": [\n                {\n                    \"name\": \"10,000 \u0111\",\n                    \"value\": 10000,\n                    \"price\": \"10000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"20,000 \u0111\",\n                    \"value\": 20000,\n                    \"price\": \"20000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"30,000 \u0111\",\n                    \"value\": 30000,\n                    \"price\": \"30000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"300,000 \u0111\",\n                    \"value\": 300000,\n                    \"price\": \"300000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"N\u1ea1p Vinaphone tr\u1ea3 tr\u01b0\u1edbc\",\n            \"service_code\": \"vinatt\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/thecao/the-vinaphone.jpeg\",\n            \"items\": [\n                {\n                    \"name\": \"20,000 \u0111\",\n                    \"value\": 20000,\n                    \"price\": \"20000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"30,000 \u0111\",\n                    \"value\": 30000,\n                    \"price\": \"30000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"300,000 \u0111\",\n                    \"value\": 300000,\n                    \"price\": \"300000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"10,000 \u0111\",\n                    \"value\": 10000,\n                    \"price\": \"10000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                }\n            ]\n        },\n        {\n            \"name\": \"N\u1ea1p Vinaphone tr\u1ea3 sau\",\n            \"service_code\": \"vinats\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/thecao/the-vinaphone.jpeg\",\n            \"items\": [\n                {\n                    \"name\": \"20,000 \u0111\",\n                    \"value\": 20000,\n                    \"price\": \"20000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"30,000 \u0111\",\n                    \"value\": 30000,\n                    \"price\": \"30000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"300,000 \u0111\",\n                    \"value\": 300000,\n                    \"price\": \"300000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"10,000 \u0111\",\n                    \"value\": 10000,\n                    \"price\": \"10000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                }\n            ]\n        },\n        {\n            \"name\": \"N\u1ea1p Mobifone tr\u1ea3 sau\",\n            \"service_code\": \"mobits\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/thecao/the-mobifone.jpeg\",\n            \"items\": [\n                {\n                    \"name\": \"20,000 \u0111\",\n                    \"value\": 20000,\n                    \"price\": \"20000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"30,000 \u0111\",\n                    \"value\": 30000,\n                    \"price\": \"30000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"300,000 \u0111\",\n                    \"value\": 300000,\n                    \"price\": \"300000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"10,000 \u0111\",\n                    \"value\": 10000,\n                    \"price\": \"10000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                }\n            ]\n        },\n        {\n            \"name\": \"N\u1ea1p Mobifone tr\u1ea3 tr\u01b0\u1edbc\",\n            \"service_code\": \"mobitt\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/thecao/the-mobifone.jpeg\",\n            \"items\": [\n                {\n                    \"name\": \"20,000 \u0111\",\n                    \"value\": 20000,\n                    \"price\": \"20000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"30,000 \u0111\",\n                    \"value\": 30000,\n                    \"price\": \"30000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"300,000 \u0111\",\n                    \"value\": 300000,\n                    \"price\": \"300000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"10,000 \u0111\",\n                    \"value\": 10000,\n                    \"price\": \"10000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                }\n            ]\n        },\n        {\n            \"name\": \"N\u1ea1p Vietnamobile tr\u1ea3 tr\u01b0\u1edbc\",\n            \"service_code\": \"vnmobilett\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/thecao/the-vietnamobile.jpeg\",\n            \"items\": [\n                {\n                    \"name\": \"20,000 \u0111\",\n                    \"value\": 20000,\n                    \"price\": \"20000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"30,000 \u0111\",\n                    \"value\": 30000,\n                    \"price\": \"30000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"300,000 \u0111\",\n                    \"value\": 300000,\n                    \"price\": \"300000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                },\n                {\n                    \"name\": \"10,000 \u0111\",\n                    \"value\": 10000,\n                    \"price\": \"10000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": 0\n                }\n            ]\n        },\n        {\n            \"name\": \"Avatar 3\",\n            \"service_code\": \"av3\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/avatar3.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Avatar Musik\",\n            \"service_code\": \"am\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/avatarmusik.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Ninja\",\n            \"service_code\": \"nj\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/ninjaschool.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Ng\u1ecdc R\u1ed3ng\",\n            \"service_code\": \"nr\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/ngocrong.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Hi\u1ec7p S\u0129 Online\",\n            \"service_code\": \"hs\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/hiepsionline.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"S\u01a1n Th\u1ee7y Ph\u00e2n Tranh\",\n            \"service_code\": \"stpt\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/sonthuyphantranh.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"KPAH\",\n            \"service_code\": \"kpah\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/kran.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"KPAH 3D\",\n            \"service_code\": \"kpah3d\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/kran3d.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Mobi Army 2\",\n            \"service_code\": \"army2\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/army2.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Mobi Army 3\",\n            \"service_code\": \"army3\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/army3.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Ongame\",\n            \"service_code\": \"ongame\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/ongame.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Avatar\",\n            \"service_code\": \"avatar\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/avatar.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        },\n        {\n            \"name\": \"H\u1ea3i T\u1eb7c T\u00ed Hon\",\n            \"service_code\": \"ht\",\n            \"image\": \"http://api.netpaydev.vn/storage/userfiles/images/topup/haitactihon.jpg\",\n            \"items\": [\n                {\n                    \"name\": \"50,000 \u0111\",\n                    \"value\": 50000,\n                    \"price\": \"50000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"100,000 \u0111\",\n                    \"value\": 100000,\n                    \"price\": \"100000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"200,000 \u0111\",\n                    \"value\": 200000,\n                    \"price\": \"200000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"500,000 \u0111\",\n                    \"value\": 500000,\n                    \"price\": \"500000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                },\n                {\n                    \"name\": \"1,000,000 \u0111\",\n                    \"value\": 1000000,\n                    \"price\": \"1000000\",\n                    \"currency_code\": \"VND\",\n                    \"discount\": \"4\"\n                }\n            ]\n        }\n    ]\n}"
+                        }
+                    ],
+                    "_postman_id": "369f1cb9-e48c-41de-b8d0-1dbcb8250929"
+                },
+                {
+                    "name": "L\u1ea5y s\u1ed1 d\u01b0",
+                    "id": "39b96ace-c499-42fe-8da4-ba301ec1cdc4",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"getbalance\", \r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "http://{{domain_post}}/api/rechargews",
+                        "description": "<p>H\u00e0m n\u00e0y s\u1ebd t\u1ea3i l\u1ea1i th\u1ebb theo m\u00e3 \u0111\u01a1n h\u00e0ng, kh\u00f4ng ph\u00e1t sinh giao d\u1ecbch m\u1edbi. <br />\n<strong>Th\u1ee9 t\u1ef1 m\u00e3 h\u00f3a ch\u1eef k\u00fd: md5(partner_key + partner_id +  command) </strong></p>\n",
+                        "urlObject": {
+                            "protocol": "http",
+                            "path": [
+                                "api",
+                                "rechargews"
+                            ],
+                            "host": [
+                                "{{domain_post}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "46a8614a-7c38-4152-8d63-99c0331451c2",
+                            "name": "Get Balance",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"partner_id\": \"3681148751\", \r\n    \"command\":\"getbalance\", \r\n    \"sign\":\"43567456546dfs32465asdkg123\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": "http://{{domain_post}}/api/rechargews"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Fri, 15 Apr 2022 09:32:29 GMT"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Apache"
+                                },
+                                {
+                                    "key": "Expires",
+                                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-store, no-cache, must-revalidate"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "6000"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "5999"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "65"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=120, max=1000"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "Keep-Alive"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"balance\": 85465019,\n        \"currency\": \"VND\"\n    }\n}"
+                        }
+                    ],
+                    "_postman_id": "39b96ace-c499-42fe-8da4-ba301ec1cdc4"
+                }
+            ],
+            "id": "1e3595dd-c85e-4af3-af73-7d4cba88d77b",
+            "_postman_id": "1e3595dd-c85e-4af3-af73-7d4cba88d77b",
+            "description": ""
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "cd213c5f-8b55-4e67-99be-1d6e38a70476",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "8f9a504c-ced0-4c62-9c47-0640cd69e138",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "domain",
+            "value": "webthe.vn"
+        }
+    ]
+}

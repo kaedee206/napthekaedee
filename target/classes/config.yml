@@ -1,0 +1,63 @@
+# Cấu hình Web Server (nhận callback TheSieuRe và SePay)
+web-server:
+  port: 8080
+
+# Chế độ gỡ lỗi (true = hiện log chi tiết, false = tắt log)
+debug_mode: false
+
+# Cấu hình TheSieuRe
+thesieure:
+  partner_id: "your_partner_id"
+  partner_key: "your_partner_key"
+  url: "https://thesieure.com/chargingws/v2"
+
+# Cấu hình SePay (IPN Webhook)
+sepay:
+  # Merchant ID (để tạo QR tự động qua API SePay)
+  merchant_id: "your_merchant_id"
+  # Secret key để xác thực request từ SePay (đặt trong SePay Dashboard → Webhook)
+  secret_key: "your_sepay_secret_key"
+  # Số tài khoản ngân hàng nhận tiền
+  account_number: "000000000"
+  # Mã ngân hàng (theo VietQR: MB, VCB, TCB, ACB, BIDV, VPB, ...)
+  bank_code: "MB"
+  # Tên chủ tài khoản (hiển thị trên QR)
+  account_name: "NGUYEN VAN A"
+  # Template QR (compact, compact2, print, qr_only)
+  qr_template: "compact"
+
+# Cấu hình tiền tệ tùy chỉnh (dùng với PlaceholderAPI)
+currency:
+  # Tên đơn vị tiền tệ nạp (hiển thị trong game và placeholder)
+  primary_name: "Crystal"
+  primary_symbol: "💎"
+  # Định dạng số (sử dụng #,### để thêm dấu phẩy phân cách)
+  number_format: "#,###.##"
+
+# Cấu hình Tỷ giá (Exchange Rates)
+rates:
+  qr_rate: 1.0 # 10k VND = 1 Crystal
+  card_rate: 0.8 # 10k VND = 0.8 Crystal
+  crystal_to_koin_rate: 100000 # 1 Crystal = 100,000 Koin (Vault)
+  wrong_value_penalty: 0.5 # Phạt 50% nếu sai mệnh giá thẻ
+
+# Cấu hình Hiệu ứng (Effects)
+effects:
+  level_up_sound: "ENTITY_PLAYER_LEVELUP"
+  challenge_complete_sound: "UI_TOAST_CHALLENGE_COMPLETE"
+  challenge_threshold: 500000
+
+# Thông báo
+messages:
+  enable_broadcast: true
+  broadcast_topup: "&aNgười chơi &e%player% &avừa nạp &e%vnd% VND&a!"
+  broadcast_challenge: "&dNgười chơi &e%player% &dvừa nạp một mốc cực lớn: &e%vnd% VND&d! Xin chúc mừng!"
+  prefix: "&f[&aNapThe&f] &7"
+  no_permission: "&cBạn không có quyền thực hiện lệnh này."
+  invalid_amount: "&cSố tiền không hợp lệ. Vui lòng nhập 5k, 10k, 20k, 50k, 100k, 200k, 500k."
+  success_qr: "&aBạn đã tạo mã QR thành công. Vui lòng cầm bản đồ trên tay và quét. Hết hạn sau 10 phút."
+  success_card: "&aĐã gửi thẻ lên hệ thống. Vui lòng chờ xử lý!"
+  charged_success: "&aChúc mừng! Bạn vừa nạp thành công &e%vnd% VND &avà nhận được &b%crystal% Crystal&a!"
+  charged_wrong_value: "&eThẻ sai mệnh giá! Mệnh giá thực: %vnd% VND. Bạn nhận được %crystal% Crystal (đã bị phạt 50%)."
+  charged_failed: "&cThẻ của bạn bị lỗi hoặc đã được sử dụng."
+  uprank: "&dChúc mừng %player% đã đạt mốc nạp thẻ %rank%!"

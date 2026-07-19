@@ -1,0 +1,26 @@
+milestones:
+  rank1:
+    amount: 100000 # 100k VND
+    commands:
+      - "lp user %player% parent add rank1"
+      - "broadcast &aNgười chơi %player% đã đạt mốc nạp Rank 1!"
+  rank2:
+    amount: 200000 # 200k VND
+    commands:
+      - "lp user %player% parent add rank2"
+      - "broadcast &aNgười chơi %player% đã đạt mốc nạp Rank 2!"
+  rank3:
+    amount: 500000 # 500k VND
+    commands:
+      - "lp user %player% parent add rank3"
+      - "broadcast &aNgười chơi %player% đã đạt mốc nạp Rank 3!"
+  rank4:
+    amount: 750000 # 750k VND
+    commands:
+      - "lp user %player% parent add rank4"
+      - "broadcast &aNgười chơi %player% đã đạt mốc nạp Rank 4!"
+  rank5:
+    amount: 1000000 # 1m VND
+    commands:
+      - "lp user %player% parent add rank5"
+      - "broadcast &aNgười chơi %player% đã đạt mốc nạp Rank 5!"

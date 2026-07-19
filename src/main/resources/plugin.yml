@@ -1,0 +1,30 @@
+name: NapThe
+version: 1.0
+main: com.kaedee.napthe.NapThe
+api-version: 1.20
+depend: [Vault]
+softdepend: [PlaceholderAPI]
+commands:
+  napthe:
+    description: "Nạp thẻ hoặc chuyển khoản ngân hàng"
+    usage: "/<command> <card|qr|history|adhistory> [args...]"
+    aliases: [nap]
+  topnap:
+    description: "Xem top 10 nạp thẻ"
+    usage: "/<command>"
+  napinfo:
+    description: "Xem thông tin nạp thẻ của bản thân"
+    usage: "/<command>"
+permissions:
+  napthe.use:
+    description: "Cho phép sử dụng lệnh /napthe"
+    default: true
+  napthe.admin:
+    description: "Cho phép xem lịch sử nạp thẻ của người khác và xem IP"
+    default: op
+  napthe.topnap:
+    description: "Cho phép xem top nạp thẻ"
+    default: true
+  napthe.napinfo:
+    description: "Cho phép xem thông tin nạp thẻ"
+    default: true
