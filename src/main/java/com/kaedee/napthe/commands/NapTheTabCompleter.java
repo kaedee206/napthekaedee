@@ -28,11 +28,14 @@ public class NapTheTabCompleter implements TabCompleter {
 
         if (args.length == 1) {
             // /napthe <subcommand>
-            List<String> subCommands = new ArrayList<>(Arrays.asList("card", "qr", "history"));
+            List<String> subCommands = new ArrayList<>(Arrays.asList("card", "qr", "info", "history"));
             if (sender.hasPermission("napthe.admin")) {
                 subCommands.add("adhistory");
                 subCommands.add("reload");
             }
+            if (sender.hasPermission("napthe.admin.give")) subCommands.add("give");
+            if (sender.hasPermission("napthe.admin.take")) subCommands.add("take");
+            if (sender.hasPermission("napthe.admin.balance")) subCommands.add("balance");
             StringUtil.copyPartialMatches(args[0], subCommands, completions);
 
         } else if (args.length == 2) {
@@ -43,6 +46,16 @@ public class NapTheTabCompleter implements TabCompleter {
                 case "qr":
                     // /napthe card <amount> hoặc /napthe qr <amount>
                     StringUtil.copyPartialMatches(args[1], AMOUNTS, completions);
+                    break;
+                case "give":
+                case "take":
+                case "balance":
+                    // suggest online players
+                    List<String> onlinePlayers = new ArrayList<>();
+                    for (Player p : Bukkit.getOnlinePlayers()) {
+                        onlinePlayers.add(p.getName());
+                    }
+                    StringUtil.copyPartialMatches(args[1], onlinePlayers, completions);
                     break;
                 case "adhistory":
                     // /napthe adhistory [player] [page] — chỉ admin

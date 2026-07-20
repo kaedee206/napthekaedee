@@ -28,3 +28,12 @@ permissions:
   napthe.napinfo:
     description: "Cho phép xem thông tin nạp thẻ"
     default: true
+  napthe.admin.give:
+    description: "Cho phép cộng Crystal cho người chơi"
+    default: op
+  napthe.admin.take:
+    description: "Cho phép trừ Crystal của người chơi"
+    default: op
+  napthe.admin.balance:
+    description: "Cho phép xem số dư Crystal của người chơi khác"
+    default: op

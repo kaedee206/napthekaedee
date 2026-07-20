@@ -121,38 +121,55 @@ public class HttpServerManager {
                 String body = new String(is.readAllBytes(), StandardCharsets.UTF_8);
                 
                 try {
-                    // Xác thực Secret Key từ header
-                    String secretKey = configManager.getConfig().getString("sepay.secret_key", "");
+                    plugin.getLogger().info("[SePay Webhook] Đã nhận được POST request. Body: " + body);
+                    // Xác thực Token Webhook từ header (nếu người dùng có cấu hình)
+                    String webhookToken = configManager.getConfig().getString("sepay.webhook_token", "");
                     String headerKey = exchange.getRequestHeaders().getFirst("Authorization");
                     
-                    if (!secretKey.isEmpty() && (headerKey == null || !headerKey.equals("Apikey " + secretKey))) {
+                    if (!webhookToken.isEmpty() && (headerKey == null || !headerKey.equals("Apikey " + webhookToken))) {
                         sendResponse(exchange, 401, "{\"success\":false,\"message\":\"Unauthorized\"}");
                         return;
                     }
                     
                     JsonObject json = JsonParser.parseString(body).getAsJsonObject();
                     
-                    // SePay IPN fields:
-                    // transferAmount: số tiền chuyển khoản
-                    // content: nội dung chuyển khoản (chứa mã giao dịch = requestId)
-                    // gateway: cổng thanh toán
-                    // transactionDate: ngày giao dịch
-                    // transferType: "in" = nhận tiền
+                    String requestId = null;
+                    double amountReceived = 0;
                     
-                    String transferType = json.has("transferType") ? json.get("transferType").getAsString() : "";
-                    if (!"in".equalsIgnoreCase(transferType)) {
-                        sendResponse(exchange, 200, "{\"success\":true,\"message\":\"Ignored outgoing transfer\"}");
+                    // Kiểm tra xem đây là webhook của Cổng thanh toán (ORDER_PAID) hay Webhook Ngân hàng (transferType)
+                    if (json.has("notification_type") && json.get("notification_type").getAsString().equals("ORDER_PAID")) {
+                        // Xử lý theo format SePay Payment Gateway
+                        JsonObject order = json.getAsJsonObject("order");
+                        requestId = order.has("order_invoice_number") ? order.get("order_invoice_number").getAsString() : "";
+                        // Dùng số tiền giao dịch thực tế hoặc số tiền của đơn
+                        JsonObject transaction = json.has("transaction") && !json.get("transaction").isJsonNull() 
+                                ? json.getAsJsonObject("transaction") : null;
+                        if (transaction != null && transaction.has("transaction_amount")) {
+                            amountReceived = transaction.get("transaction_amount").getAsDouble();
+                        } else {
+                            amountReceived = order.has("order_amount") ? order.get("order_amount").getAsDouble() : 0;
+                        }
+                    } else if (json.has("transferType")) {
+                        // Xử lý theo format SePay Bank Webhook (Biến động số dư)
+                        String transferType = json.get("transferType").getAsString();
+                        if (!"in".equalsIgnoreCase(transferType)) {
+                            sendResponse(exchange, 200, "{\"success\":true,\"message\":\"Ignored outgoing transfer\"}");
+                            return;
+                        }
+                        
+                        amountReceived = json.has("transferAmount") ? json.get("transferAmount").getAsDouble() : 0;
+                        String content = json.has("content") ? json.get("content").getAsString() : "";
+                        
+                        // Tìm requestId trong nội dung chuyển khoản (format: NAP_PlayerName_Amount)
+                        requestId = extractRequestId(content);
+                    } else {
+                        plugin.debug("SePay webhook: Unknown payload format: " + body);
+                        sendResponse(exchange, 200, "{\"success\":true,\"message\":\"Unknown payload format\"}");
                         return;
                     }
                     
-                    double transferAmount = json.has("transferAmount") ? json.get("transferAmount").getAsDouble() : 0;
-                    String content = json.has("content") ? json.get("content").getAsString() : "";
-                    
-                    // Tìm requestId trong nội dung chuyển khoản (format: NAP_PlayerName_Amount)
-                    String requestId = extractRequestId(content);
-                    
                     if (requestId == null || requestId.isEmpty()) {
-                        plugin.debug("SePay webhook: Could not find request ID in content: " + content);
+                        plugin.debug("SePay webhook: Could not find request ID in payload");
                         sendResponse(exchange, 200, "{\"success\":true,\"message\":\"No matching request ID\"}");
                         return;
                     }
@@ -166,14 +183,14 @@ public class HttpServerManager {
                     
                     // Tính Crystal theo tỉ lệ QR
                     double crystalRate = configManager.getConfig().getDouble("rates.qr_rate", 1.0);
-                    double crystals = (transferAmount / 10000.0) * crystalRate;
+                    double crystals = (amountReceived / 10000.0) * crystalRate;
                     
                     plugin.getSQLiteManager().updateTransactionStatus(requestId, "SUCCESS");
-                    plugin.getSQLiteManager().addCrystalAndTotalDonated(uuid, crystals, transferAmount);
+                    plugin.getSQLiteManager().addCrystalAndTotalDonated(uuid, crystals, amountReceived);
                     
-                    plugin.processRewardsAndNotify(uuid, transferAmount, crystals, true);
+                    plugin.processRewardsAndNotify(uuid, amountReceived, crystals, true);
                     
-                    plugin.debug("SePay payment received: " + transferAmount + " VND -> " + crystals + " Crystal for " + uuid);
+                    plugin.debug("SePay payment received: " + amountReceived + " VND -> " + crystals + " Crystal for " + uuid);
                     sendResponse(exchange, 200, "{\"success\":true}");
                 } catch (Exception e) {
                     plugin.debug(e);

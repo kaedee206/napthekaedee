@@ -61,3 +61,30 @@ messages:
   charged_wrong_value: "&eThẻ sai mệnh giá! Mệnh giá thực: %vnd% VND. Bạn nhận được %crystal% Crystal (đã bị phạt 50%)."
   charged_failed: "&cThẻ của bạn bị lỗi hoặc đã được sử dụng."
   uprank: "&dChúc mừng %player% đã đạt mốc nạp thẻ %rank%!"
+
+# ============================================================
+# Cấu hình Discord Bot (gửi embed thông báo nạp thẻ)
+# ============================================================
+discord:
+  # Bật/tắt tính năng thông báo Discord
+  enabled: false
+
+  # Token của Discord Bot (lấy từ https://discord.com/developers/applications)
+  bot_token: "your_bot_token_here"
+
+  # ID của channel muốn gửi thông báo (bật Developer Mode → chuột phải channel → Copy ID)
+  channel_id: "your_channel_id_here"
+
+  # Màu embed (dạng hex, không có #)
+  embed_color: "00FF88"
+
+  # Tiêu đề embed
+  embed_title: "💎 Nạp thẻ thành công!"
+
+  # Hiển thị avatar Minecraft của player trong embed
+  show_avatar: true
+
+  # Gửi embed riêng khi đạt mốc challenge (>= effects.challenge_threshold)
+  notify_challenge: true
+  challenge_title: "🎉 Mốc nạp thẻ lớn!"
+  challenge_color: "FFD700"

@@ -69,7 +69,9 @@ public class NapThePlaceholders extends PlaceholderExpansion {
         switch (params.toLowerCase()) {
             case "crystal": {
                 double crystal = queryCrystal(player);
-                return String.valueOf((int) crystal);
+                // Hiển thị số thập phân (tối đa 2 chữ số) thay vì ép kiểu int, dùng Locale US để đảm bảo dấu chấm thay vì phẩy
+                java.text.DecimalFormat rawFmt = new java.text.DecimalFormat("0.##", java.text.DecimalFormatSymbols.getInstance(java.util.Locale.US));
+                return rawFmt.format(crystal);
             }
             case "crystal_formatted": {
                 double crystal = queryCrystal(player);

@@ -38,8 +38,12 @@ public class NapInfoCommand implements CommandExecutor {
                 
                 if (rs.next()) {
                     double total = rs.getDouble("total_donated");
+                    double crystal = rs.getDouble("current_crystal");
                     String ip = rs.getString("ip_address");
-                    
+
+                    String crystalName   = plugin.getConfigManager().getConfig().getString("currency.primary_name", "Crystal");
+                    String crystalSymbol = plugin.getConfigManager().getConfig().getString("currency.primary_symbol", "💎");
+
                     // Simple rank logic based on total (should match reward.yml theoretically, but keeping simple here)
                     String rank = "Mặc định";
                     if (total >= 1000000) rank = "Rank 5";
@@ -47,10 +51,12 @@ public class NapInfoCommand implements CommandExecutor {
                     else if (total >= 500000) rank = "Rank 3";
                     else if (total >= 200000) rank = "Rank 2";
                     else if (total >= 100000) rank = "Rank 1";
-                    
+
                     player.sendMessage("§e=== THÔNG TIN NẠP THẺ ===");
                     player.sendMessage("§f[ §d" + rank + " §f] - §a" + player.getName());
                     player.sendMessage("§7Tổng nạp: §e" + (int)total + " VND");
+                    java.text.DecimalFormat rawFmt = new java.text.DecimalFormat("0.##", java.text.DecimalFormatSymbols.getInstance(java.util.Locale.US));
+                    player.sendMessage("§7Số dư " + crystalName + ": §b" + rawFmt.format(crystal) + " §f" + crystalSymbol);
                     if (player.hasPermission("napthe.admin")) {
                         player.sendMessage("§7IP Address: §e" + ip);
                     }

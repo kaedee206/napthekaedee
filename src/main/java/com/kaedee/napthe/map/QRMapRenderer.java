@@ -15,6 +15,12 @@ public class QRMapRenderer extends MapRenderer {
     private boolean rendered = false;
     private BufferedImage image;
 
+    public QRMapRenderer(BufferedImage img) {
+        if (img != null) {
+            this.image = resize(img, 128, 128);
+        }
+    }
+
     public QRMapRenderer(String urlString) {
         try {
             URL url = new URL(urlString);

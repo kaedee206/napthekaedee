@@ -95,7 +95,7 @@ public class SQLiteManager {
 
     public void addTransaction(String id, UUID uuid, String type, double amountVnd, double amountCrystal, String status) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-            try (PreparedStatement ps = connection.prepareStatement("INSERT INTO transactions (id, uuid, type, amount_vnd, amount_crystal, status, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)")) {
+            try (PreparedStatement ps = connection.prepareStatement("INSERT OR IGNORE INTO transactions (id, uuid, type, amount_vnd, amount_crystal, status, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)")) {
                 ps.setString(1, id);
                 ps.setString(2, uuid.toString());
                 ps.setString(3, type);
@@ -122,17 +122,81 @@ public class SQLiteManager {
         });
     }
 
+    /**
+     * Cộng Crystal và tổng VND cho player.
+     * Dùng UPSERT để đảm bảo hoạt động đúng kể cả khi player OFFLINE
+     * hoặc chưa từng login (row chưa tồn tại trong bảng users).
+     */
     public void addCrystalAndTotalDonated(UUID uuid, double crystalAmount, double vndAmount) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-            try (PreparedStatement ps = connection.prepareStatement("UPDATE users SET current_crystal = current_crystal + ?, total_donated = total_donated + ? WHERE uuid = ?")) {
-                ps.setDouble(1, crystalAmount);
-                ps.setDouble(2, vndAmount);
-                ps.setString(3, uuid.toString());
+            try (PreparedStatement ps = connection.prepareStatement(
+                    "INSERT INTO users (uuid, current_crystal, total_donated) VALUES (?, ?, ?) " +
+                    "ON CONFLICT(uuid) DO UPDATE SET " +
+                    "current_crystal = current_crystal + excluded.current_crystal, " +
+                    "total_donated   = total_donated   + excluded.total_donated")) {
+                ps.setString(1, uuid.toString());
+                ps.setDouble(2, crystalAmount);
+                ps.setDouble(3, vndAmount);
                 ps.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         });
+    }
+
+
+    /**
+     * Trừ Crystal của player. Sử dụng MAX(0, ...) để đảm bảo số dư KHÔNG BAO GIỜ âm.
+     * Nếu muốn kiểm tra trước, dùng {@link #hasSufficientCrystal(UUID, double)} trước khi gọi method này.
+     */
+    public void removeCrystal(UUID uuid, double amount) {
+        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+            // MAX(0, current_crystal - amount) đảm bảo không bao giờ xuống dưới 0
+            try (PreparedStatement ps = connection.prepareStatement(
+                    "UPDATE users SET current_crystal = MAX(0, current_crystal - ?) WHERE uuid = ?")) {
+                ps.setDouble(1, amount);
+                ps.setString(2, uuid.toString());
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    /**
+     * Kiểm tra xem player có đủ Crystal để trừ không.
+     * Dùng phương thức này trong UltimateShop / handleTake để từ chối giao dịch khi không đủ tiền.
+     *
+     * @return true nếu đủ số dư, false nếu không đủ
+     */
+    public boolean hasSufficientCrystal(UUID uuid, double amount) {
+        return getCrystal(uuid) >= amount;
+    }
+
+    public void giveCrystal(UUID uuid, double amount) {
+        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+            try (PreparedStatement ps = connection.prepareStatement("UPDATE users SET current_crystal = current_crystal + ? WHERE uuid = ?")) {
+                ps.setDouble(1, amount);
+                ps.setString(2, uuid.toString());
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public double getCrystal(UUID uuid) {
+        try (PreparedStatement ps = connection.prepareStatement("SELECT current_crystal FROM users WHERE uuid = ?")) {
+            ps.setString(1, uuid.toString());
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getDouble("current_crystal");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
     
     public double getTotalDonated(UUID uuid) {
@@ -154,6 +218,19 @@ public class SQLiteManager {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return UUID.fromString(rs.getString("uuid"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getTransactionStatus(String id) {
+        try (PreparedStatement ps = connection.prepareStatement("SELECT status FROM transactions WHERE id = ?")) {
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getString("status");
             }
         } catch (SQLException e) {
             e.printStackTrace();

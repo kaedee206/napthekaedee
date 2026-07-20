@@ -4,6 +4,7 @@ import com.kaedee.napthe.commands.NapTheCommand;
 import com.kaedee.napthe.commands.NapTheTabCompleter;
 import com.kaedee.napthe.commands.TopNapCommand;
 import com.kaedee.napthe.commands.NapInfoCommand;
+import com.kaedee.napthe.discord.DiscordManager;
 import com.kaedee.napthe.hooks.NapThePlaceholders;
 import com.kaedee.napthe.database.SQLiteManager;
 import com.kaedee.napthe.http.HttpServerManager;
@@ -24,6 +25,7 @@ public class NapThe extends JavaPlugin {
     private HttpServerManager httpServerManager;
     private TsrManager tsrManager;
     private VaultManager vaultManager;
+    private DiscordManager discordManager;
 
     @Override
     public void onEnable() {
@@ -44,6 +46,9 @@ public class NapThe extends JavaPlugin {
 
         httpServerManager = new HttpServerManager(this, configManager);
         httpServerManager.startServer();
+
+        discordManager = new DiscordManager(this);
+        discordManager.start();
 
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new com.kaedee.napthe.listeners.QRListener(this), this);
@@ -69,6 +74,9 @@ public class NapThe extends JavaPlugin {
         if (httpServerManager != null) {
             httpServerManager.stopServer();
         }
+        if (discordManager != null) {
+            discordManager.shutdown();
+        }
         if (sqLiteManager != null) {
             sqLiteManager.close();
         }
@@ -88,6 +96,10 @@ public class NapThe extends JavaPlugin {
 
     public VaultManager getVaultManager() {
         return vaultManager;
+    }
+
+    public DiscordManager getDiscordManager() {
+        return discordManager;
     }
 
     public void debug(String message) {
@@ -112,12 +124,7 @@ public class NapThe extends JavaPlugin {
                 removeQrMaps(player);
             }
 
-            // Quy đổi Crystal → Koin (Vault) và cộng vào tài khoản
-            double koinRate = configManager.getConfig().getDouble("rates.crystal_to_koin_rate", 100000.0);
-            if (koinRate > 0) {
-                double koin = crystals * koinRate;
-                vaultManager.addMoney(Bukkit.getOfflinePlayer(uuid), koin);
-            }
+            // Quy đổi Crystal -> Koin đã bị loại bỏ. Người chơi sẽ dùng UltimateShop để đổi Koin.
             
             if (player != null) {
                 if (success) {
@@ -136,12 +143,17 @@ public class NapThe extends JavaPlugin {
                         try {
                             Bukkit.getPlayer(uuid).playSound(Bukkit.getPlayer(uuid).getLocation(), Sound.valueOf(sound), 1.0f, 1.0f);
                         } catch (Exception ignored) {}
-                        
+
                         if (enableBroadcast) {
                             String bcMsg = configManager.getMessage("broadcast_challenge")
                                     .replace("%player%", name)
                                     .replace("%vnd%", String.valueOf((int)vndAmount));
                             Bukkit.broadcastMessage(configManager.getMessage("prefix") + bcMsg);
+                        }
+
+                        // Gửi Discord embed mốc lớn
+                        if (discordManager != null) {
+                            discordManager.sendTopupEmbed(name, vndAmount, crystals, "QR/CARD", true);
                         }
                     } else {
                         // Hiệu ứng nạp bình thường
@@ -149,12 +161,17 @@ public class NapThe extends JavaPlugin {
                         try {
                             Bukkit.getPlayer(uuid).playSound(Bukkit.getPlayer(uuid).getLocation(), Sound.valueOf(sound), 1.0f, 1.0f);
                         } catch (Exception ignored) {}
-                        
+
                         if (enableBroadcast) {
                             String bcMsg = configManager.getMessage("broadcast_topup")
                                     .replace("%player%", name)
                                     .replace("%vnd%", String.valueOf((int)vndAmount));
                             Bukkit.broadcastMessage(configManager.getMessage("prefix") + bcMsg);
+                        }
+
+                        // Gửi Discord embed nạp thường
+                        if (discordManager != null) {
+                            discordManager.sendTopupEmbed(name, vndAmount, crystals, "QR/CARD", false);
                         }
                     }
                 } else {

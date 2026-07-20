@@ -30,15 +30,8 @@ public class NapTheCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players can use this command.");
-            return true;
-        }
-
-        Player player = (Player) sender;
-
         if (args.length == 0) {
-            sendUsage(player);
+            sendUsage(sender);
             return true;
         }
 
@@ -46,38 +39,77 @@ public class NapTheCommand implements CommandExecutor {
 
         switch (subCommand) {
             case "card":
-                handleCard(player, args);
+                if (checkPlayer(sender)) handleCard((Player) sender, args);
                 break;
             case "qr":
-                handleQR(player, args);
+                if (checkPlayer(sender)) handleQR((Player) sender, args);
+                break;
+            case "info":
+                if (checkPlayer(sender)) handleInfo((Player) sender);
                 break;
             case "history":
-                handleHistory(player);
+                if (checkPlayer(sender)) handleHistory((Player) sender);
                 break;
             case "adhistory":
-                handleAdHistory(player, args);
+                if (checkPlayer(sender)) handleAdHistory((Player) sender, args);
                 break;
             case "reload":
-                handleReload(player);
+                if (checkPlayer(sender)) handleReload((Player) sender);
+                break;
+            case "take":
+                handleTake(sender, args);
+                break;
+            case "give":
+                handleGive(sender, args);
+                break;
+            case "balance":
+                handleBalance(sender, args);
                 break;
             default:
-                sendUsage(player);
+                sendUsage(sender);
                 break;
         }
 
         return true;
     }
-
-    private void sendUsage(Player player) {
-        String prefix = plugin.getConfigManager().getMessage("prefix");
-        player.sendMessage(prefix + "§eCác lệnh khả dụng:");
-        player.sendMessage("  §a/napthe card <amount> <telco> <code> <serial> §7- Nạp thẻ cào");
-        player.sendMessage("  §a/napthe qr <amount> §7- Tạo mã QR chuyển khoản");
-        player.sendMessage("  §a/napthe history §7- Xem lịch sử nạp");
-        if (player.hasPermission("napthe.admin")) {
-            player.sendMessage("  §a/napthe adhistory [player|all] [page] §7- Xem lịch sử nạp");
-            player.sendMessage("  §a/napthe reload §7- Tải lại cấu hình");
+    
+    private boolean checkPlayer(CommandSender sender) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage("Only players can use this command.");
+            return false;
         }
+        return true;
+    }
+
+    private void sendUsage(CommandSender sender) {
+        String prefix = plugin.getConfigManager().getMessage("prefix");
+        sender.sendMessage(prefix + "§eCác lệnh khả dụng:");
+        sender.sendMessage("  §a/napthe info §7- Xem số dư Crystal của bạn");
+        sender.sendMessage("  §a/napthe card <amount> <telco> <code> <serial> §7- Nạp thẻ cào");
+        sender.sendMessage("  §a/napthe qr <amount> §7- Tạo mã QR chuyển khoản");
+        sender.sendMessage("  §a/napthe history §7- Xem lịch sử nạp");
+        if (sender.hasPermission("napthe.admin")) {
+            sender.sendMessage("  §a/napthe adhistory [player|all] [page] §7- Xem lịch sử nạp");
+            sender.sendMessage("  §a/napthe reload §7- Tải lại cấu hình");
+        }
+        if (sender.hasPermission("napthe.admin.give")) {
+            sender.sendMessage("  §a/napthe give <player> <amount> §7- Cộng Crystal");
+        }
+        if (sender.hasPermission("napthe.admin.take")) {
+            sender.sendMessage("  §a/napthe take <player> <amount> §7- Trừ Crystal");
+        }
+        if (sender.hasPermission("napthe.admin.balance")) {
+            sender.sendMessage("  §a/napthe balance <player> §7- Xem số dư Crystal");
+        }
+    }
+
+    private void handleInfo(Player player) {
+        String prefix = plugin.getConfigManager().getMessage("prefix");
+        String crystalName = plugin.getConfigManager().getConfig().getString("currency.primary_name", "Crystal");
+        String crystalSymbol = plugin.getConfigManager().getConfig().getString("currency.primary_symbol", "💎");
+        double balance = plugin.getSQLiteManager().getCrystal(player.getUniqueId());
+        java.text.DecimalFormat rawFmt = new java.text.DecimalFormat("0.##", java.text.DecimalFormatSymbols.getInstance(java.util.Locale.US));
+        player.sendMessage(prefix + "§eSố dư của bạn: §b" + rawFmt.format(balance) + " §f" + crystalSymbol + " " + crystalName);
     }
 
     private void handleCard(Player player, String[] args) {
@@ -310,48 +342,147 @@ public class NapTheCommand implements CommandExecutor {
     }
 
     private void generateQR(Player player, int amount) {
-        String requestId = "NAP_" + player.getName() + "_" + amount;
+        String randomSuffix = String.format("%04d", java.util.concurrent.ThreadLocalRandom.current().nextInt(10000));
+        String requestId = "NAP_" + player.getName() + "_" + amount + "_" + randomSuffix;
 
         try {
             // Đọc cấu hình SePay từ config.yml
             String merchantId = plugin.getConfig().getString("sepay.merchant_id", "");
+            String secretKey = plugin.getConfig().getString("sepay.secret_key", "");
             String bank = plugin.getConfig().getString("sepay.bank_code", "MB");
             String account = plugin.getConfig().getString("sepay.account_number", "000000000");
             String accountName = plugin.getConfig().getString("sepay.account_name", "");
             String template = plugin.getConfig().getString("sepay.qr_template", "compact");
-
-            String qrUrl;
-            if (merchantId != null && !merchantId.isEmpty() && !merchantId.equals("your_merchant_id")) {
-                qrUrl = "https://qr.sepay.vn/img?api=" + merchantId 
-                        + "&amount=" + amount 
-                        + "&des=" + URLEncoder.encode(requestId, StandardCharsets.UTF_8.toString())
-                        + "&template=" + template;
-            } else {
-                qrUrl = "https://qr.sepay.vn/img?acc=" + account 
-                        + "&bank=" + bank 
-                        + "&amount=" + amount 
-                        + "&des=" + URLEncoder.encode(requestId, StandardCharsets.UTF_8.toString())
-                        + "&template=" + template 
-                        + "&accountName=" + URLEncoder.encode(accountName, StandardCharsets.UTF_8.toString());
-            }
-
-            MapView mapView = Bukkit.createMap(player.getWorld());
-            mapView.getRenderers().clear();
-            mapView.addRenderer(new QRMapRenderer(qrUrl));
-
-            ItemStack mapItem = new ItemStack(Material.FILLED_MAP);
-            MapMeta meta = (MapMeta) mapItem.getItemMeta();
-            meta.setMapView(mapView);
-
             org.bukkit.NamespacedKey key = new org.bukkit.NamespacedKey(plugin, "qr_id");
-            meta.getPersistentDataContainer().set(key, org.bukkit.persistence.PersistentDataType.STRING, requestId);
 
-            String currencySymbol = plugin.getConfig().getString("currency.primary_symbol", "💎");
-            String currencyName = plugin.getConfig().getString("currency.primary_name", "Crystal");
-            meta.setDisplayName(org.bukkit.ChatColor.GREEN + "Quét mã QR để nạp " + amount + " VND " + currencySymbol);
-            mapItem.setItemMeta(meta);
+            String qrUrlFallback = "https://qr.sepay.vn/img?acc=" + account 
+                    + "&bank=" + bank 
+                    + "&amount=" + amount 
+                    + "&des=" + URLEncoder.encode(requestId, StandardCharsets.UTF_8.toString())
+                    + "&template=" + template 
+                    + "&accountName=" + URLEncoder.encode(accountName, StandardCharsets.UTF_8.toString());
 
-            player.getInventory().addItem(mapItem);
+            player.sendMessage(plugin.getConfigManager().getMessage("prefix") + "§eĐang khởi tạo mã QR, vui lòng đợi...");
+
+            plugin.getServer().getScheduler().runTaskAsynchronously(plugin, () -> {
+                String checkoutUrl = null;
+                String finalQrUrl = qrUrlFallback;
+                
+                if (merchantId != null && !merchantId.isEmpty() && !merchantId.equals("your_merchant_id") 
+                    && secretKey != null && !secretKey.isEmpty() && !secretKey.equals("your_sepay_secret_key")) {
+                    
+                    checkoutUrl = com.kaedee.napthe.utils.SePayUtils.createCheckoutUrl(
+                            merchantId, 
+                            secretKey, 
+                            amount, 
+                            requestId, 
+                            "Nap the " + player.getName(), 
+                            player.getName(),
+                            "", // successUrl
+                            "", // errorUrl
+                            "", // cancelUrl
+                            plugin.getLogger()
+                    );
+                    
+                    if (checkoutUrl != null) {
+                        String extractedQrUrl = com.kaedee.napthe.utils.SePayUtils.extractQrImageUrl(checkoutUrl);
+                        if (extractedQrUrl != null) {
+                            finalQrUrl = extractedQrUrl;
+                            plugin.getLogger().info("[SePay] Lấy thành công ảnh QR từ trang thanh toán: " + finalQrUrl);
+                        }
+
+                        java.util.regex.Matcher m = java.util.regex.Pattern.compile("order_id=([^&]+)").matcher(checkoutUrl);
+                        if (m.find()) {
+                            String sepayOrderId = m.group(1);
+                            plugin.getLogger().info("[SePay] Bắt đầu theo dõi đơn hàng: " + sepayOrderId);
+                            new org.bukkit.scheduler.BukkitRunnable() {
+                                int attempts = 0;
+                                @Override
+                                public void run() {
+                                    attempts++;
+                                    if (attempts > 120) { // Timeout sau 10 phút
+                                        this.cancel();
+                                        return;
+                                    }
+                                    if (com.kaedee.napthe.utils.SePayUtils.checkOrderStatus(merchantId, secretKey, requestId, plugin.getLogger())) {
+                                        this.cancel();
+                                        plugin.getLogger().info("[SePay] Đơn hàng " + requestId + " đã thanh toán (via Polling).");
+                                        
+                                        plugin.getServer().getScheduler().runTask(plugin, () -> {
+                                            java.util.UUID uuid = plugin.getSQLiteManager().getUuidByTxId(requestId);
+                                            if (uuid != null) {
+                                                String status = plugin.getSQLiteManager().getTransactionStatus(requestId);
+                                                if ("PENDING".equalsIgnoreCase(status)) {
+                                                    double crystalRate = plugin.getConfig().getDouble("rates.qr_rate", 1.0);
+                                                    double crystals = (amount / 10000.0) * crystalRate;
+                                                    plugin.getSQLiteManager().updateTransactionStatus(requestId, "SUCCESS");
+                                                    plugin.getSQLiteManager().addCrystalAndTotalDonated(uuid, crystals, amount);
+                                                    plugin.processRewardsAndNotify(uuid, amount, crystals, true);
+                                                }
+                                            }
+                                        });
+                                    }
+                                }
+                            }.runTaskTimerAsynchronously(plugin, 100L, 100L); // 5s interval
+                        }
+                    }
+                }
+
+                // Tải ảnh QR trên thread phụ để tránh giật lag server
+                java.awt.image.BufferedImage img = null;
+                try {
+                    java.net.URL url = new java.net.URL(finalQrUrl);
+                    java.net.HttpURLConnection connection = (java.net.HttpURLConnection) url.openConnection();
+                    connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+                    connection.setConnectTimeout(5000);
+                    connection.setReadTimeout(5000);
+                    img = javax.imageio.ImageIO.read(connection.getInputStream());
+                } catch (Exception e) {
+                    plugin.getLogger().warning("[SePay] Không thể tải ảnh QR: " + e.getMessage());
+                }
+                
+                final String finalCheckoutUrl = checkoutUrl;
+                final java.awt.image.BufferedImage finalImg = img;
+                
+                // Quay lại Main Thread để xử lý các thao tác của Bukkit (tạo Map, thêm Item)
+                plugin.getServer().getScheduler().runTask(plugin, () -> {
+                    if (!player.isOnline()) return;
+                    
+                    if (finalCheckoutUrl != null) {
+                        net.md_5.bungee.api.chat.TextComponent msg = new net.md_5.bungee.api.chat.TextComponent(
+                                plugin.getConfigManager().getMessage("prefix") + "§a§l[BẤM VÀO ĐÂY ĐỂ MỞ TRANG THANH TOÁN SEPAY]"
+                        );
+                        msg.setClickEvent(new net.md_5.bungee.api.chat.ClickEvent(net.md_5.bungee.api.chat.ClickEvent.Action.OPEN_URL, finalCheckoutUrl));
+                        msg.setHoverEvent(new net.md_5.bungee.api.chat.HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT, new net.md_5.bungee.api.chat.hover.content.Text("§eClick để mở link thanh toán")));
+                        
+                        player.spigot().sendMessage(msg);
+                        player.sendMessage(plugin.getConfigManager().getMessage("prefix") + "§7Hoặc bạn có thể sử dụng bản đồ QR trên tay để quét.");
+                    } else if (merchantId != null && !merchantId.equals("your_merchant_id")) {
+                        player.sendMessage(plugin.getConfigManager().getMessage("prefix") + "§cLỗi khởi tạo liên kết thanh toán. Bạn vẫn có thể dùng QR Code trên tay!");
+                    }
+
+                    MapView mapView = Bukkit.createMap(player.getWorld());
+                    mapView.getRenderers().clear();
+                    if (finalImg != null) {
+                        mapView.addRenderer(new QRMapRenderer(finalImg));
+                    } else {
+                        mapView.addRenderer(new QRMapRenderer(qrUrlFallback));
+                    }
+
+                    ItemStack mapItem = new ItemStack(Material.FILLED_MAP);
+                    MapMeta meta = (MapMeta) mapItem.getItemMeta();
+                    meta.setMapView(mapView);
+
+                    meta.getPersistentDataContainer().set(key, org.bukkit.persistence.PersistentDataType.STRING, requestId);
+
+                    String currencySymbol = plugin.getConfig().getString("currency.primary_symbol", "💎");
+                    String currencyName = plugin.getConfig().getString("currency.primary_name", "Crystal");
+                    meta.setDisplayName(org.bukkit.ChatColor.GREEN + "Quét mã QR để nạp " + amount + " VND " + currencySymbol);
+                    mapItem.setItemMeta(meta);
+
+                    player.getInventory().addItem(mapItem);
+                });
+            });
 
             // Xóa QR sau 30 phút
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
@@ -377,5 +508,101 @@ public class NapTheCommand implements CommandExecutor {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void handleGive(CommandSender sender, String[] args) {
+        if (!sender.hasPermission("napthe.admin.give")) {
+            sender.sendMessage(plugin.getConfigManager().getMessage("no_permission"));
+            return;
+        }
+        if (args.length < 3) {
+            sender.sendMessage("§cSử dụng: /napthe give <player> <amount>");
+            return;
+        }
+        org.bukkit.OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
+        try {
+            double amount = Double.parseDouble(args[2]);
+            plugin.getSQLiteManager().giveCrystal(target.getUniqueId(), amount);
+            sender.sendMessage("§aĐã cộng " + amount + " Crystal cho " + target.getName() + ".");
+        } catch (NumberFormatException e) {
+            sender.sendMessage("§cSố lượng không hợp lệ.");
+        }
+    }
+
+    private void handleTake(CommandSender sender, String[] args) {
+        if (!sender.hasPermission("napthe.admin.take")) {
+            sender.sendMessage(plugin.getConfigManager().getMessage("no_permission"));
+            return;
+        }
+        if (args.length < 3) {
+            sender.sendMessage("§cSử dụng: /napthe take <player> <amount> [commands...]");
+            return;
+        }
+        org.bukkit.OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
+        try {
+            double amount = Double.parseDouble(args[2]);
+            if (amount <= 0) {
+                sender.sendMessage("§cSố lượng phải lớn hơn 0.");
+                return;
+            }
+            // ✅ Kiểm tra số dư trước khi trừ — ngăn crystal xuống âm
+            if (!plugin.getSQLiteManager().hasSufficientCrystal(target.getUniqueId(), amount)) {
+                double current = plugin.getSQLiteManager().getCrystal(target.getUniqueId());
+                java.text.DecimalFormat rawFmt = new java.text.DecimalFormat("0.##", java.text.DecimalFormatSymbols.getInstance(java.util.Locale.US));
+                
+                // Gửi thông báo cho console
+                sender.sendMessage("§cKhông đủ Crystal! " + target.getName() + " chỉ có §e" + rawFmt.format(current) + " §cCrystal.");
+                
+                // Gửi trực tiếp cho người chơi nếu đang online
+                if (target.isOnline() && target.getPlayer() != null) {
+                    target.getPlayer().sendMessage("§cBạn không có đủ Crystal! Cần ít nhất §b" + rawFmt.format(amount) + " Crystal§c. Bạn hiện có §e" + rawFmt.format(current) + " Crystal§c.");
+                }
+                return;
+            }
+            plugin.getSQLiteManager().removeCrystal(target.getUniqueId(), amount);
+            
+            // Gửi thông báo cho console/người gõ lệnh
+            sender.sendMessage("§aĐã trừ " + amount + " Crystal của " + target.getName() + ".");
+            // Gửi thông báo cho người chơi nếu họ đang online
+            if (target.isOnline() && target.getPlayer() != null) {
+                target.getPlayer().sendMessage("§aĐã thanh toán thành công §e" + amount + " Crystal§a!");
+            }
+
+            // ✅ Chạy lệnh đính kèm nếu giao dịch thành công (Hỗ trợ cấu hình UltimateShop)
+            if (args.length > 3) {
+                StringBuilder commandBuilder = new StringBuilder();
+                for (int i = 3; i < args.length; i++) {
+                    commandBuilder.append(args[i]).append(" ");
+                }
+                String cmdToRun = commandBuilder.toString().trim();
+                // Hỗ trợ nhiều lệnh bằng dấu ;
+                String[] commands = cmdToRun.split(";");
+                for (String cmd : commands) {
+                    if (!cmd.trim().isEmpty()) {
+                        // Chạy lệnh từ Console
+                        Bukkit.getScheduler().runTask(plugin, () -> {
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.trim());
+                        });
+                    }
+                }
+            }
+        } catch (NumberFormatException e) {
+            sender.sendMessage("§cSố lượng không hợp lệ.");
+        }
+    }
+
+    private void handleBalance(CommandSender sender, String[] args) {
+        if (!sender.hasPermission("napthe.admin.balance")) {
+            sender.sendMessage(plugin.getConfigManager().getMessage("no_permission"));
+            return;
+        }
+        if (args.length < 2) {
+            sender.sendMessage("§cSử dụng: /napthe balance <player>");
+            return;
+        }
+        org.bukkit.OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
+        double balance = plugin.getSQLiteManager().getCrystal(target.getUniqueId());
+        java.text.DecimalFormat rawFmt = new java.text.DecimalFormat("0.##", java.text.DecimalFormatSymbols.getInstance(java.util.Locale.US));
+        sender.sendMessage("§aSố dư Crystal của " + target.getName() + " là: §e" + rawFmt.format(balance));
     }
 }
